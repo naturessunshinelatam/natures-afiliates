@@ -34,9 +34,7 @@ export const fetchLandingContent = createAsyncThunk(
         }
 
         try {
-            const url = import.meta.env.DEV
-                ? `/mock/landing/${cc}.json`
-                : `/api/landing?country=${encodeURIComponent(cc)}`;
+            const url = `/mock/landing/${cc}.json`;
 
             const { data } = await api.get(url);
 
