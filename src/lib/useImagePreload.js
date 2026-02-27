@@ -13,7 +13,7 @@ export const useImagePreload = (urls = []) => {
         let cancelled = false;
 
         const inc = () => {
-            if (!cancelled) return;
+            if (cancelled) return;
             setLoaded((n) => Math.min(n + 1, urls.length));
         }
 
