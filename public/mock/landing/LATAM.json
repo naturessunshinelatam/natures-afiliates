@@ -9,7 +9,40 @@
   },
   "supplementsTitle": "Suplementos",
   "supplementsSubtitle": "Contenido de ejemplo.",
-  "supplements": [],
+  "supplements": [
+    {
+      "name": "Omega Balance",
+      "desc": "Soporte cardiovascular • Pureza verificada",
+      "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
+      "featuredTitle": "Producto estrella",
+      "featuredDesc": "Protección cardiovascular con ingredientes de alta calidad.",
+      "tags": ["Corazón", "Bienestar", "Premium"]
+    },
+    {
+      "name": "Daily Greens",
+      "desc": "Energía suave • Vitaminas y minerales",
+      "img": "https://powerhealth.pro/sunshineuniversity/uploads/d6c577e5-b7ad-4e6e-9d61-d96130e29f67_file",
+      "featuredTitle": "Producto estrella",
+      "featuredDesc": "Energía funcional con mezcla verde y micronutrientes esenciales.",
+      "tags": ["Energía", "Verdes", "Vitalidad"]
+    },
+    {
+      "name": "Collagen+",
+      "desc": "Piel • Articulaciones • Recuperación",
+      "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/1e303773-cbae-4272-8e03-6f9d07eb90ab",
+      "featuredTitle": "Producto estrella",
+      "featuredDesc": "Soporte de belleza y movilidad para tu rutina diaria.",
+      "tags": ["Piel", "Movilidad", "Recuperación"]
+    },
+    {
+      "name": "Calm Sleep",
+      "desc": "Rutina nocturna • Descanso profundo",
+      "img": "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file",
+      "featuredTitle": "Producto estrella",
+      "featuredDesc": "Aliado nocturno para dormir mejor y despertar con energía.",
+      "tags": ["Descanso", "Relajación", "Sueño"]
+    }
+  ],
   "feature": {
     "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
     "imageAlt": "Testimonio de afiliado",

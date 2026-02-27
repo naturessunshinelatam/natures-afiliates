@@ -1,37 +1,90 @@
-import { useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useReveal } from "../lib/useReveal";
 import { useActiveContent } from "../lib/useActiveContent";
 
-// const items = [
-//   {
-//     name: "Omega Balance",
-//     desc: "Soporte cardiovascular • Pureza verificada",
-//     img: "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
-//   },
-//   {
-//     name: "Daily Greens",
-//     desc: "Energía suave • Vitaminas y minerales",
-//     img: "https://powerhealth.pro/sunshineuniversity/uploads/d6c577e5-b7ad-4e6e-9d61-d96130e29f67_file",
-//   },
-//   {
-//     name: "Collagen+",
-//     desc: "Piel • Articulaciones • Recuperación",
-//     img: "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/1e303773-cbae-4272-8e03-6f9d07eb90ab",
-//   },
-//   {
-//     name: "Calm Sleep",
-//     desc: "Rutina nocturna • Descanso profundo",
-//     img: "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file",
-//   },
-// ];
+gsap.registerPlugin(ScrollTrigger);
 
 export const Supplements = () => {
   const content = useActiveContent();
   const root = useRef(null);
+  const [flippedIndex, setFlippedIndex] = useState(null);
   useReveal(root, { y: 16, stagger: 0.06 });
+  const items = content?.supplements || [];
+
+  useLayoutEffect(() => {
+    const el = root.current;
+    if (!el || !items.length) return;
+
+    const cleanup = [];
+    const cards = Array.from(el.querySelectorAll(".supp-card"));
+
+    cards.forEach((card) => {
+      const tags = card.querySelectorAll(".supp-tag");
+
+      const enter = () => {
+        gsap.to(card, {
+          y: -8,
+          scale: 1.01,
+          duration: 0.25,
+          ease: "power2.out",
+        });
+        gsap.to(tags, {
+          y: -2,
+          scale: 1.03,
+          duration: 0.2,
+          stagger: 0.03,
+          ease: "power2.out",
+        });
+      };
+
+      const leave = () => {
+        gsap.to(card, {
+          y: 0,
+          scale: 1,
+          duration: 0.22,
+          ease: "power2.out",
+        });
+        gsap.to(tags, {
+          y: 0,
+          scale: 1,
+          duration: 0.18,
+          stagger: 0.02,
+          ease: "power2.out",
+        });
+      };
+
+      card.addEventListener("pointerenter", enter);
+      card.addEventListener("pointerleave", leave);
+
+      cleanup.push(() => {
+        card.removeEventListener("pointerenter", enter);
+        card.removeEventListener("pointerleave", leave);
+      });
+    });
+
+    return () => {
+      cleanup.forEach((fn) => fn());
+    };
+  }, [items.length]);
+
+  useLayoutEffect(() => {
+    const el = root.current;
+    if (!el || !items.length) return;
+
+    const inners = Array.from(el.querySelectorAll(".supp-flip__inner"));
+
+    inners.forEach((inner, index) => {
+      gsap.to(inner, {
+        rotateY: flippedIndex === index ? 180 : 0,
+        duration: 0.45,
+        ease: "power2.out",
+      });
+    });
+  }, [flippedIndex, items.length]);
 
   if (!content) return;
-  const items = content.supplements || [];
   if (!items.length) return null;
 
   return (
@@ -44,22 +97,58 @@ export const Supplements = () => {
       </header>
 
       <div className="grid">
-        {items.map((it) => (
-          <article className="card reveal" key={it.name}>
-            <img
-              className="card__img"
-              src={it.img}
-              alt={it.name}
-              loading="lazy"
-              decoding="async"
-            />
-            <div className="car__body">
+        {items.map((it, index) => (
+          <article
+            className={`card reveal supp-card ${flippedIndex === index ? "supp-card--flipped" : ""}`}
+            key={it.name}
+          >
+            <div
+              className="supp-flip"
+              tabIndex={0}
+              role="button"
+              aria-pressed={flippedIndex === index}
+              aria-label={`Ver detalle de ${it.name}`}
+              onClick={() =>
+                setFlippedIndex((prev) => (prev === index ? null : index))
+              }
+              onKeyDown={(event) => {
+                if (event.key === "Enter" || event.key === " ") {
+                  event.preventDefault();
+                  setFlippedIndex((prev) => (prev === index ? null : index));
+                }
+              }}
+            >
+              <div className="supp-flip__inner">
+                <div className="supp-flip__face supp-flip__face--front">
+                  <img
+                    className="card__img"
+                    src={it.img}
+                    alt={it.name}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <div className="supp-flip__face supp-flip__face--back">
+                  <p className="supp-flip__kicker">
+                    {it.featuredTitle || "Producto estrella"}
+                  </p>
+                  <h4>{it.name}</h4>
+                  <p className="muted">{it.featuredDesc || it.desc}</p>
+                </div>
+              </div>
+            </div>
+            <div className="card__body">
               <h3>{it.name}</h3>
               <p className="muted">{it.desc}</p>
               <div className="tags">
-                <span className="tag">Bienestar</span>
-                <span className="tag">Calidad</span>
-                <span className="tag">Confianza</span>
+                {(it.tags?.length
+                  ? it.tags
+                  : ["Bienestar", "Calidad", "Confianza"]
+                ).map((tag) => (
+                  <span className="tag supp-tag" key={`${it.name}-${tag}`}>
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </article>

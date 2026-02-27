@@ -246,9 +246,100 @@ main {
   object-fit: cover;
   display: block;
 }
+
+.supp-flip {
+  perspective: 1000px;
+  height: 180px;
+  outline: none;
+  transition:
+    height 0.45s ease,
+    box-shadow 0.3s ease;
+}
+
+.supp-card--flipped .supp-flip {
+  height: 280px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+}
+
+.supp-flip:focus-visible {
+  box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--a) 65%, white 35%);
+}
+
+.supp-flip__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+.supp-flip__face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.supp-flip__face--front {
+  z-index: 2;
+}
+
+.supp-flip__face--back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+    145deg,
+    rgba(45, 212, 191, 0.16),
+    rgba(56, 189, 248, 0.12)
+  );
+  border-bottom: 1px solid var(--line);
+  padding: 18px;
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  overflow-y: auto;
+}
+
+.supp-flip__back h4,
+.supp-flip__face--back h4 {
+  margin: 0;
+}
+
+.supp-flip__face--back p {
+  margin: 0;
+}
+
+.supp-flip__kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.72rem;
+  color: color-mix(in srgb, var(--a) 55%, white 45%);
+  font-weight: 700;
+}
+
 .card__body {
   padding: 14px;
 }
+
+.supp-card .card__body {
+  max-height: 220px;
+  opacity: 1;
+  transform: translateY(0);
+  overflow: hidden;
+  transition:
+    max-height 0.35s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    padding 0.25s ease;
+}
+
+.supp-card--flipped .card__body {
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  padding-top: 0;
+  padding-bottom: 0;
+  pointer-events: none;
+}
+
 .tags {
   display: flex;
   gap: 8px;
@@ -261,6 +352,11 @@ main {
   border-radius: 999px;
   border: 1px solid var(--line);
   background: rgba(255, 255, 255, 0.04);
+}
+
+.supp-card,
+.supp-tag {
+  will-change: transform;
 }
 
 .split {
