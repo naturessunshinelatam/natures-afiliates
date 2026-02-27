@@ -1,0 +1,84 @@
+{
+  "country": "MX",
+  "hero": {
+    "title": "Impulsa tu negocio con bienestar",
+    "subtitle": "Únete como consultor(a) y comparte productos con respaldo y comunidad.",
+    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
+    "ctaPrimary": "Afíliate",
+    "ctaSecondary": "Descargar catálogo"
+  },
+  "supplementsTitle": "Suplementos destacados",
+  "supplementsSubtitle": "Productos de ejemplo (mock). Se reemplazarán por los de tu país.",
+  "supplements": [
+    {
+      "name": "Omega Balance",
+      "desc": "Soporte cardiovascular • Pureza verificada",
+      "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62"
+    },
+    {
+      "name": "Daily Greens",
+      "desc": "Energía suave • Vitaminas y minerales",
+      "img": "https://powerhealth.pro/sunshineuniversity/uploads/d6c577e5-b7ad-4e6e-9d61-d96130e29f67_file"
+    },
+    {
+      "name": "Collagen+",
+      "desc": "Piel • Articulaciones • Recuperación",
+      "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/1e303773-cbae-4272-8e03-6f9d07eb90ab"
+    },
+    {
+      "name": "Calm Sleep",
+      "desc": "Rutina nocturna • Descanso profundo",
+      "img": "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file"
+    }
+  ],
+  "feature": {
+    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
+    "imageAlt": "Testimonio de afiliado",
+    "videoUrl": "https://youtube.com/shorts/_1AxO-NHo1o",
+    "quotes": [
+      "Mi vida cambió completamente desde que me afilié. No solo gano dinero, sino que ayudo a otros.",
+      "La comunidad de Natures es increíble. Encontré amigos y mentores que me apoyan todos los días.",
+      "No creía que esto funcionaría, pero después de 3 meses mis resultados hablan solos."
+    ],
+    "ctaText": "Únete ahora"
+  },
+  "catalog": {
+    "title": "Catálogo en PDF",
+    "text": "Material de apoyo para presentar la marca y sus líneas principales.",
+    "pdfUrl": "/catalogo.pdf",
+    "panelImg": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80"
+  },
+  "testimonialsTitle": "Testimonios",
+  "testimonialsSubtitle": "Arrastra para navegar o usa los botones.",
+  "testimonials": [
+    {
+      "name": "María G.",
+      "role": "Consultora",
+      "text": "El enfoque es humano; la gente conecta con la marca rápido."
+    },
+    {
+      "name": "David R.",
+      "role": "Líder",
+      "text": "Material claro, soporte constante y un mensaje de salud real."
+    },
+    {
+      "name": "Karla P.",
+      "role": "Afiliada",
+      "text": "Me gustó lo simple: se entiende y se comparte fácil."
+    },
+    {
+      "name": "Luis M.",
+      "role": "Consultor",
+      "text": "La presentación es limpia y transmite confianza desde el primer vistazo."
+    }
+  ],
+  "footer": {
+    "certs": ["GMP", "ISO 22000"],
+    "social": {
+      "instagram": "#",
+      "facebook": "#",
+      "youtube": "#",
+      "linkedin": "#"
+    }
+  }
+}
