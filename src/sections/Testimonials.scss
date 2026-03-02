@@ -1,0 +1,50 @@
+@use '../styles/variables' as *;
+
+// ===== Testimonials Section (Carousel) =====
+.rail {
+  display: flex;
+  gap: 12px;
+  overflow: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 6px;
+  cursor: grab;
+  user-select: none;
+  -webkit-overflow-scrolling: touch;
+
+  &--drag {
+    cursor: grabbing;
+  }
+}
+
+.quote {
+  min-width: 280px;
+  max-width: 380px;
+  scroll-snap-align: start;
+  margin: 0;
+  border: 1px solid $line;
+  border-radius: $r;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 14px;
+}
+
+// Carousel Dots
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid $line;
+  background: rgba(255, 255, 255, 0.06);
+  cursor: pointer;
+
+  &--on {
+    background: linear-gradient(135deg, $a, $b);
+    border-color: transparent;
+  }
+}

@@ -1,0 +1,168 @@
+@use '../styles/variables' as *;
+
+// ===== Navbar Component =====
+.nav {
+  position: fixed;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  backdrop-filter: blur(10px);
+  background: rgba(7, 26, 31, 0.55);
+  border-bottom: 1px solid $line;
+
+  // ===== Top Bar with Country Selector =====
+  &__top {
+    padding: 8px 4vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid rgba(234, 247, 251, 0.08);
+  }
+
+  &__selectWrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  &__label {
+    font-size: 0.85rem;
+    color: $muted;
+  }
+
+  &__select {
+    border: 1px solid $line;
+    background: rgba(255, 255, 255, 0.04);
+    color: $text;
+    padding: 8px 10px;
+    border-radius: 12px;
+    max-width: 46vw;
+
+    option {
+      background: #1a1a1a;
+      color: $text;
+      padding: 8px;
+
+      &:hover {
+        background: $a;
+        color: white;
+      }
+
+      &:checked {
+        background: $a;
+        color: white;
+      }
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      max-width: 280px;
+    }
+  }
+
+  &__reset {
+    border: 1px solid $line;
+    background: rgba(255, 255, 255, 0.04);
+    color: $text;
+    padding: 8px 10px;
+    border-radius: 12px;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  &__pill {
+    font-size: 0.85rem;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid $line;
+    background: rgba(255, 255, 255, 0.04);
+    color: $muted;
+  }
+
+  // ===== Main Navigation Bar =====
+  &__bar {
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 0 4vw;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+  }
+
+  &__brandLogo {
+    width: 36px;
+    height: 36px;
+    display: block;
+  }
+
+  &__brandText {
+    line-height: 1;
+  }
+
+  &__toggle {
+    border: 1px solid $line;
+    background: rgba(255, 255, 255, 0.04);
+    color: $text;
+    padding: 10px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  // Desktop links hidden in mobile by default
+  &__links--desktop {
+    display: none;
+  }
+
+  // Mobile dropdown panel
+  &__panel {
+    padding: 10px 4vw 14px;
+    display: grid;
+    gap: 8px;
+    border-top: 1px solid $line;
+    background: rgba(7, 26, 31, 0.92);
+  }
+
+  &__panelBtn {
+    width: 100%;
+    text-align: left;
+    border: 1px solid $line;
+    background: rgba(255, 255, 255, 0.04);
+    color: $text;
+    padding: 12px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+  }
+
+  // ===== Desktop Responsive Styles =====
+  @media (min-width: $breakpoint-tablet) {
+    &__toggle {
+      display: none;
+    }
+
+    &__links--desktop {
+      display: flex;
+      gap: 8px;
+      overflow: visible;
+      max-width: none;
+    }
+
+    &__btn {
+      border: 1px solid $line;
+      background: rgba(255, 255, 255, 0.04);
+      color: $text;
+      padding: 8px 10px;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      cursor: pointer;
+    }
+  }
+}

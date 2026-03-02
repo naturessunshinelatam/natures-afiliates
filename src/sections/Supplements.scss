@@ -1,0 +1,118 @@
+@use '../styles/variables' as *;
+
+// ===== Supplements Section (with Flip Cards) =====
+
+// Tags
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.tag {
+  font-size: 0.85rem;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid $line;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+// Flip Card System
+.supp-card {
+  will-change: transform;
+
+  .card__body {
+    max-height: 220px;
+    opacity: 1;
+    transform: translateY(0);
+    overflow: hidden;
+    transition:
+      max-height 0.35s ease,
+      opacity 0.25s ease,
+      transform 0.25s ease,
+      padding 0.25s ease;
+  }
+
+  &--flipped {
+    .supp-flip {
+      height: 280px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+    }
+
+    .card__body {
+      max-height: 0;
+      opacity: 0;
+      transform: translateY(-6px);
+      padding-top: 0;
+      padding-bottom: 0;
+      pointer-events: none;
+    }
+  }
+}
+
+.supp-tag {
+  will-change: transform;
+}
+
+.supp-flip {
+  perspective: 1000px;
+  height: 180px;
+  outline: none;
+  transition:
+    height 0.45s ease,
+    box-shadow 0.3s ease;
+
+  &:focus-visible {
+    box-shadow: inset 0 0 0 2px color-mix(in srgb, $a 65%, white 35%);
+  }
+
+  &__inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+  }
+
+  &__face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+
+    &--front {
+      z-index: 2;
+    }
+
+    &--back {
+      transform: rotateY(180deg);
+      background: linear-gradient(
+        145deg,
+        rgba(45, 212, 191, 0.16),
+        rgba(56, 189, 248, 0.12)
+      );
+      border-bottom: 1px solid $line;
+      padding: 18px;
+      display: grid;
+      align-content: center;
+      gap: 10px;
+      overflow-y: auto;
+
+      h4 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+
+  &__kicker {
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    color: color-mix(in srgb, $a 55%, white 45%);
+    font-weight: 700;
+  }
+}

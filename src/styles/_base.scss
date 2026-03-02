@@ -1,0 +1,54 @@
+@use 'variables' as *;
+
+// ===== CSS Custom Properties =====
+:root {
+  --bg: #{$bg};
+  --card: #{$card};
+  --text: #{$text};
+  --muted: #{$muted};
+  --line: #{$line};
+  --a: #{$a};
+  --b: #{$b};
+  --c: #{$c};
+  --shadow: #{$shadow};
+  --r: #{$r};
+}
+
+// ===== Reset & Base Styles =====
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background:
+    radial-gradient(
+      1200px 600px at 20% 0%,
+      rgba(56, 189, 248, 0.2),
+      transparent 60%
+    ),
+    radial-gradient(
+      900px 500px at 90% 20%,
+      rgba(34, 197, 94, 0.18),
+      transparent 55%
+    ),
+    $bg;
+  color: $text;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    Segoe UI,
+    Roboto,
+    Arial;
+}
+
+a {
+  color: inherit;
+}
+
+main {
+  padding-top: 112px;
+}

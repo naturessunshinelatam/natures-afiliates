@@ -6,6 +6,7 @@ import {
   fetchGeo,
 } from "../store/geoSlice";
 import { NSPLogo } from "./NSPLogo";
+import "./Navbar.scss";
 
 const links = [
   { id: "hero", label: "Inicio" },

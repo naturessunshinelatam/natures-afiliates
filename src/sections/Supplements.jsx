@@ -1,8 +1,9 @@
-import { useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useReveal } from "../lib/useReveal";
 import { useActiveContent } from "../lib/useActiveContent";
+import "./Supplements.scss";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -13,59 +14,69 @@ export const Supplements = () => {
   useReveal(root, { y: 16, stagger: 0.06 });
   const items = content?.supplements || [];
 
-  useLayoutEffect(() => {
+  // Hover animations for cards and tags
+  // Using useEffect (not useLayoutEffect) for external DOM event listeners
+  // This ensures the DOM is fully rendered before attaching handlers
+  useEffect(() => {
     const el = root.current;
     if (!el || !items.length) return;
 
-    const cleanup = [];
-    const cards = Array.from(el.querySelectorAll(".supp-card"));
+    // Small delay to ensure DOM is completely ready
+    const timeoutId = requestAnimationFrame(() => {
+      const cleanup = [];
+      const cards = Array.from(el.querySelectorAll(".supp-card"));
 
-    cards.forEach((card) => {
-      const tags = card.querySelectorAll(".supp-tag");
+      cards.forEach((card) => {
+        const tags = card.querySelectorAll(".supp-tag");
 
-      const enter = () => {
-        gsap.to(card, {
-          y: -8,
-          scale: 1.01,
-          duration: 0.25,
-          ease: "power2.out",
+        const enter = () => {
+          gsap.to(card, {
+            y: -8,
+            scale: 1.01,
+            duration: 0.25,
+            ease: "power2.out",
+          });
+          gsap.to(tags, {
+            y: -2,
+            scale: 1.03,
+            duration: 0.2,
+            stagger: 0.03,
+            ease: "power2.out",
+          });
+        };
+
+        const leave = () => {
+          gsap.to(card, {
+            y: 0,
+            scale: 1,
+            duration: 0.22,
+            ease: "power2.out",
+          });
+          gsap.to(tags, {
+            y: 0,
+            scale: 1,
+            duration: 0.18,
+            stagger: 0.02,
+            ease: "power2.out",
+          });
+        };
+
+        card.addEventListener("pointerenter", enter);
+        card.addEventListener("pointerleave", leave);
+
+        cleanup.push(() => {
+          card.removeEventListener("pointerenter", enter);
+          card.removeEventListener("pointerleave", leave);
         });
-        gsap.to(tags, {
-          y: -2,
-          scale: 1.03,
-          duration: 0.2,
-          stagger: 0.03,
-          ease: "power2.out",
-        });
-      };
-
-      const leave = () => {
-        gsap.to(card, {
-          y: 0,
-          scale: 1,
-          duration: 0.22,
-          ease: "power2.out",
-        });
-        gsap.to(tags, {
-          y: 0,
-          scale: 1,
-          duration: 0.18,
-          stagger: 0.02,
-          ease: "power2.out",
-        });
-      };
-
-      card.addEventListener("pointerenter", enter);
-      card.addEventListener("pointerleave", leave);
-
-      cleanup.push(() => {
-        card.removeEventListener("pointerenter", enter);
-        card.removeEventListener("pointerleave", leave);
       });
+
+      return () => {
+        cleanup.forEach((fn) => fn());
+      };
     });
 
     return () => {
-      cleanup.forEach((fn) => fn());
+      cancelAnimationFrame(timeoutId);
     };
   }, [items.length]);
 
