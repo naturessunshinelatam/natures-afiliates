@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from "react";
 import gsap from "gsap";
+import "./LoadingScreen.scss";
 
 export const LoadingScreen = ({ done, progress = 0, label = "Cargando…" }) => {
   const root = useRef(null);

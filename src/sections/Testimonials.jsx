@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useActiveContent } from "../lib/useActiveContent";
+import "./Testimonials.scss";
 
 const data = [
   {

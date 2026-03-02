@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
 import gsap from "gsap";
 import { useActiveContent } from "../lib/useActiveContent";
+import "./Hero.scss";
 
 const imgUrls = [
   {

@@ -1,0 +1,145 @@
+@use 'variables' as *;
+
+// ===== Layout Utilities =====
+.wrap {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+}
+
+.section {
+  padding: 64px 0;
+
+  &__head {
+    margin-bottom: 18px;
+
+    &.row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+    }
+  }
+}
+
+.row {
+  &__actions {
+    display: flex;
+    gap: 10px;
+  }
+}
+
+// ===== Typography Utilities =====
+.muted {
+  color: $muted;
+}
+
+.fine {
+  font-size: 0.9rem;
+}
+
+// ===== Component Utilities =====
+.pill {
+  display: inline-block;
+  padding: 8px 12px;
+  border: 1px solid $line;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: linear-gradient(135deg, $a, $b);
+  color: #052027;
+  font-weight: 800;
+  text-decoration: none;
+
+  &--ghost {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: $line;
+    color: $text;
+  }
+}
+
+.link {
+  color: $muted;
+  text-decoration: none;
+
+  &:hover {
+    color: $text;
+  }
+}
+
+.reveal {
+  will-change: transform, opacity;
+}
+
+// ===== Grid System =====
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.split {
+  display: grid;
+  gap: 14px;
+
+  @media (min-width: $breakpoint-tablet) {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+
+  &__media {
+    min-height: 260px;
+  }
+}
+
+// ===== Card Base =====
+.card {
+  border: 1px solid $line;
+  border-radius: $r;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.03);
+
+  &__img {
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  &__body {
+    padding: 14px;
+  }
+}
+
+// ===== Image Panel =====
+.panelImg {
+  height: 100%;
+  border-radius: $r;
+  border: 1px solid $line;
+  box-shadow: $shadow;
+  background-size: cover;
+  background-position: center;
+}
+
+// ===== Icon Button =====
+.iconBtn {
+  border: 1px solid $line;
+  background: rgba(255, 255, 255, 0.04);
+  color: $text;
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  cursor: pointer;
+}

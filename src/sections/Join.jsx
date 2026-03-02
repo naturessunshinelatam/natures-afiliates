@@ -1,3 +1,5 @@
+import "./Join.scss";
+
 export const Join = () => {
   return (
     <div className="wrap section join">
