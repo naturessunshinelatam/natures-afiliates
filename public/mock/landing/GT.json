@@ -1,14 +1,14 @@
 {
   "country": "GT",
   "hero": {
-    "title": "Impulsa tu negocio con bienestar",
-    "subtitle": "Únete como consultor(a) y comparte productos con respaldo y comunidad.",
+    "title": "Dale vuelo a tu negocio con bienestar",
+    "subtitle": "Unite como distribuidor(a) independiente. Compartí productos de calidad con respaldo internacional.",
     "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/a1cef657-e372-4cb6-b645-c3c216fd6a64",
     "ctaPrimary": "Afíliate",
     "ctaSecondary": "Descargar catálogo"
   },
   "supplementsTitle": "Suplementos destacados",
-  "supplementsSubtitle": "Productos de ejemplo (mock). Se reemplazarán por los de tu país.",
+  "supplementsSubtitle": "Nuestra línea premium con certificaciones internacionales que respaldan la calidad.",
   "supplements": [
     {
       "name": "Ginkgo Biloba",
@@ -48,14 +48,14 @@
     "imageAlt": "Testimonio de afiliado",
     "videoUrl": "https://youtube.com/shorts/_1AxO-NHo1o",
     "quotes": [
-      "Guatemala necesitaba oportunidades así. Ahora yo soy mi propio jefe.",
-      "Orgulloso de ser parte de esta revolución de bienestar en Centroamérica.",
-      "La transparencia y los valores de Natures son lo que me ganaron desde el primer día."
+      "¡Increible lo que está pasando en Guatemala. Ahora soy mi propio jefe y el bienestar es primero.",
+      "Cabal lo que me hace ser parte de esto. Natures está revolucionando el bienestar en Centroamérica.",
+      "La transparencia de Natures es lo que me convenció desde el primer día. Todo bien clarito."
     ],
     "ctaText": "Comienza tu historia"
   },
   "catalog": {
-    "title": "Guita de patrocinio",
+    "title": "Guía de patrocinio",
     "text": "Material de apoyo para presentar la marca y sus líneas principales.",
     "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
     "panelImg": "https://powerhealth.pro/sunshineuniversity/uploads/c7c932b3-a7bf-4329-bcf7-876a6965d229_file"
@@ -65,30 +65,51 @@
   "testimonials": [
     {
       "id": 1,
-      "name": "María G.",
-      "role": "Consultora",
-      "text": "El enfoque es humano; la gente conecta con la marca rápido.",
+      "name": "Lesly Maribel G.",
+      "role": "Distribuidora",
+      "text": "El enfoque es bien humano. La gente conecta con la marca rapidito.",
       "rating": 5
     },
     {
       "id": 2,
-      "name": "David R.",
-      "role": "Líder",
-      "text": "Material claro, soporte constante y un mensaje de salud real.",
+      "name": "Byron Rafael R.",
+      "role": "Líder Regional",
+      "text": "El material está clarito, el soporte es constante. Todo bien serio y profesional.",
       "rating": 5
     },
     {
       "id": 3,
-      "name": "Karla P.",
-      "role": "Afiliada",
-      "text": "Me gustó lo simple: se entiende y se comparte fácil.",
+      "name": "Brenda Paola P.",
+      "role": "Distribuidora",
+      "text": "Me encantó que todo sea sencillo. Se entiende fácil y se comparte mejor.",
       "rating": 4
     },
     {
       "id": 4,
-      "name": "Luis M.",
-      "role": "Consultor",
-      "text": "La presentación es limpia y transmite confianza desde el primer vistazo.",
+      "name": "Mynor Luis M.",
+      "role": "Distribuidor",
+      "text": "La presentación está chiva, bien limpia. Transmite confianza desde que la ves.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Wendy Carolina S.",
+      "role": "Afiliada",
+      "text": "Lo mejor es que podés trabajar desde tu casa. Ideal para mamás como yo.",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "name": "Erick José T.",
+      "role": "Líder",
+      "text": "Desde Guatemala podemos llegar lejos. Natures nos da las herramientas.",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "name": "Rosa María H.",
+      "role": "Consultora",
+      "text": "La comunidad chapina de Natures es bien unida. Todos se ayudan.",
       "rating": 5
     }
   ],
@@ -110,12 +131,44 @@
     }
   },
   "footer": {
-    "certs": ["GMP", "ISO 22000"],
+    "brand": "Natures Afiliates",
+    "tagline": "Bienestar con calma. Crecimiento con propósito.",
     "social": {
-      "instagram": "#",
-      "facebook": "#",
-      "youtube": "#",
-      "linkedin": "#"
-    }
+      "instagram": "https://www.instagram.com/naturessunshine.gt",
+      "facebook": "https://www.facebook.com/naturessunshine.gt",
+      "youtube": "https://www.youtube.com/@NaturesSunshineGT"
+    },
+    "certifications": [
+      {
+        "name": "ISO Certified",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/isocertified.svg",
+        "url": null
+      },
+      {
+        "name": "USDA Organic",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=64,height=auto,format=webp,quality=75,fit=contain/siteassets/footer/certificates/usda.webp",
+        "url": "https://www.usda.gov/"
+      },
+      {
+        "name": "NSF",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/contentassets/931e2af34e42479ca0c47dc3cd20c98f/nsf-logo2025-nsp4.png",
+        "url": "https://www.nsf.gov/"
+      },
+      {
+        "name": "Kosher",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/kosher.svg",
+        "url": null
+      },
+      {
+        "name": "TGA Certified",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/tga.svg",
+        "url": "https://www.tga.gov.au/resources/resources/forms/request-certificates-or-certified-copies-tga-licences-and-certificates"
+      },
+      {
+        "name": "Halal",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/halal.svg",
+        "url": null
+      }
+    ]
   }
 }

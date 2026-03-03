@@ -1,137 +1,136 @@
 {
-  "country": "CO",
+  "country": "PA",
   "hero": {
-    "title": "Dale impulso a tu negocio con bienestar",
-    "subtitle": "Únete como distribuidor(a) independiente. Comparte productos bacanos con respaldo internacional y comunidad que te apoya.",
-    "image": "https://images.unsplash.com/photo-1585238342028-4c4d1a5f1b72?auto=format&fit=crop&w=900&q=80",
-    "ctaPrimary": "Afíliate",
+    "title": "Construye tu negocio con bienestar",
+    "subtitle": "Únete como distribuidor(a) independiente. Comparte productos de calidad con respaldo internacional.",
+    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
+    "ctaPrimary": "Afíliate ahora",
     "ctaSecondary": "Descargar catálogo"
   },
   "supplementsTitle": "Suplementos destacados",
-  "supplementsSubtitle": "Nuestra línea premium de suplementos con certificaciones internacionales de calidad.",
+  "supplementsSubtitle": "Productos premium con certificaciones internacionales que garantizan calidad y pureza.",
   "supplements": [
     {
       "name": "Omega Balance",
       "desc": "Soporte cardiovascular • Pureza verificada",
       "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Cuidado cardiovascular diario con estándares altos de calidad.",
-      "tags": ["Corazón", "Omega", "Bienestar"]
+      "featuredDesc": "Protección cardiovascular diaria con ingredientes de alta calidad certificados.",
+      "tags": ["Corazón", "Bienestar", "Premium"]
     },
     {
       "name": "Daily Greens",
-      "desc": "Energía suave • Vitaminas y minerales",
+      "desc": "Energía natural • Vitaminas y minerales",
       "img": "https://powerhealth.pro/sunshineuniversity/uploads/d6c577e5-b7ad-4e6e-9d61-d96130e29f67_file",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Fórmula con micronutrientes para mantener enfoque y vitalidad.",
-      "tags": ["Vitalidad", "Minerales", "Verdes"]
+      "featuredDesc": "Mezcla verde con micronutrientes esenciales para energía sostenible durante el día.",
+      "tags": ["Energía", "Verdes", "Vitalidad"]
     },
     {
       "name": "Collagen+",
       "desc": "Piel • Articulaciones • Recuperación",
       "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/1e303773-cbae-4272-8e03-6f9d07eb90ab",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Soporte integral para piel, elasticidad y movilidad funcional.",
-      "tags": ["Colágeno", "Piel", "Movilidad"]
+      "featuredDesc": "Colágeno avanzado para soporte integral de belleza y movilidad funcional.",
+      "tags": ["Piel", "Movilidad", "Recuperación"]
     },
     {
       "name": "Calm Sleep",
       "desc": "Rutina nocturna • Descanso profundo",
       "img": "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Compuesto nocturno pensado para descanso reparador constante.",
+      "featuredDesc": "Fórmula nocturna diseñada para mejorar la calidad del sueño y despertar renovado.",
       "tags": ["Descanso", "Relajación", "Sueño"]
     }
   ],
   "feature": {
-    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/a1cef657-e372-4cb6-b645-c3c216fd6a64",
-    "imageAlt": "Testimonio de afiliado",
+    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
+    "imageAlt": "Testimonio de distribuidor",
     "videoUrl": "https://www.youtube.com/watch?v=cBVv3Uk2P0U",
     "quotes": [
-      "¡Parcero! En Colombia, Natures me permitió montar mi propio negocio sin plata inicial. Una chimba.",
-      "La mejor decisión que tomé este año fue unirme. Esto es demasiado berraco.",
-      "Desde mi casa y con total flexibilidad. Este es el futuro del trabajo, ¡bacano!"
+      "Desde Panamá, Natures me ha permitido crear un negocio sólido. Esto es una oportunidad real.",
+      "La mejor decisión que tomé este año fue unirme. Aquí se trabaja con profesionalismo y transparencia.",
+      "Los productos son excelentes, el soporte es constante y la comunidad es muy solidaria."
     ],
-    "ctaText": "Súmate al equipo"
+    "ctaText": "Comienza tu historia"
   },
   "catalog": {
-    "title": "Guia de patrocinio",
-    "text": "Material de apoyo para presentar la marca y sus líneas principales.",
+    "title": "Guía de patrocinio",
+    "text": "Material completo de apoyo para presentar la marca y las líneas de productos principales.",
     "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
     "panelImg": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80"
   },
   "testimonialsTitle": "Testimonios",
-  "testimonialsSubtitle": "Arrastra para navegar o usa los botones.",
+  "testimonialsSubtitle": "Historias reales de distribuidores que transformaron su vida con Natures.",
   "testimonials": [
     {
       "id": 1,
-      "name": "Carolina María G.",
+      "name": "María Antonia R.",
       "role": "Distribuidora",
-      "text": "El enfoque es súper humano, parce. La gente conecta con la marca rapidísimo.",
+      "text": "El enfoque humano hace que la gente conecte rápidamente con la marca.",
       "rating": 5
     },
     {
       "id": 2,
-      "name": "Camilo Andrés R.",
+      "name": "Carlos David F.",
       "role": "Líder Regional",
-      "text": "El material está muy claro, el soporte es constante. Todo muy serio y bacano.",
+      "text": "Material claro, soporte constante y un mensaje genuino de salud y bienestar.",
       "rating": 5
     },
     {
       "id": 3,
-      "name": "Valentina P.",
-      "role": "Distribuidora",
-      "text": "Me encantó lo sencillo que es. Se entiende fácil y se comparte mejor.",
+      "name": "Ana Victoria P.",
+      "role": "Consultora",
+      "text": "Me encantó lo simple que es todo. Se entiende fácil y se comparte mejor.",
       "rating": 4
     },
     {
       "id": 4,
-      "name": "Santiago M.",
+      "name": "Luis Alberto M.",
       "role": "Distribuidor",
-      "text": "La presentación está muy limpia, hermano. Transmite confianza desde el primer momento.",
+      "text": "La presentación es profesional y transmite confianza desde el primer contacto.",
       "rating": 5
     },
     {
       "id": 5,
-      "name": "Juliana C.",
+      "name": "Gabriela Rocío V.",
       "role": "Líder",
-      "text": "Desde Colombia se puede llegar lejos con Natures. Una oportunidad chimba, llave.",
+      "text": "La comunidad de Natures es increíble. Todos se apoyan para crecer juntos.",
       "rating": 5
     },
     {
       "id": 6,
-      "name": "Daniela R.",
-      "role": "Líder Regional",
-      "text": "El soporte de los líderes colombianos es insuperable, parcero. Todo muy berraco.",
+      "name": "Diego Enrique S.",
+      "role": "Consultor Senior",
+      "text": "Ganar dinero mientras ayudas a mejorar la salud de otros es posible con Natures.",
       "rating": 5
     },
     {
       "id": 7,
-      "name": "Catalina P.",
+      "name": "Patricia Lorena G.",
       "role": "Distribuidora",
-      "text": "Compartir bienestar mientras ganas plata. ¡Eso sí es bacano!",
+      "text": "Las capacitaciones son excelentes. Siempre hay webinars y recursos para mejorar.",
       "rating": 4
     }
   ],
   "pendingTestimonials": [
     {
       "id": 101,
-      "name": "Sebastián M.",
+      "name": "Rafael C.",
       "role": "Distribuidor Nuevo",
-      "email": "serem@example.com",
-      "text": "Primera semana en Natures y no me arrepiento. ¡Gracias!",
-      "text": "Primera semana en Natures y ya estoy motivado. ¡Esto está muy chimba!",
+      "email": "rafael@example.com",
+      "text": "Apenas llevo dos semanas y ya estoy viendo resultados. Lo recomiendo totalmente.",
       "rating": 5,
       "status": "pending",
-      "submittedAt": "2026-03-02T14:20:00Z"
+      "submittedAt": "2026-03-02T10:00:00Z"
     }
   ],
   "join": {
-    "title": "Afíliate",
-    "subtitle": "Completa el formulario y recibe información para comenzar.",
+    "title": "Únete ahora",
+    "subtitle": "Completa el formulario y recibe información completa para comenzar tu negocio.",
     "contact": {
-      "email": "consultores.co@natures-afiliates.com",
-      "whatsapp": "+57 300 123 4567",
+      "email": "consultores.pa@natures-afiliates.com",
+      "whatsapp": "+507 6000 0000",
       "schedule": "Lun–Vie • 8:00–17:00 (GMT-5)"
     },
     "downloads": {
@@ -140,16 +139,16 @@
     },
     "nextSteps": {
       "title": "¿Qué sigue?",
-      "description": "Te enviaremos información del plan y cómo iniciar con tu kit."
+      "description": "Te enviaremos toda la información sobre el plan de compensación y cómo iniciar con tu kit de productos."
     }
   },
   "footer": {
     "brand": "Natures Afiliates",
-    "tagline": "Bienestar con calma. Crecimiento con propósito.",
+    "tagline": "Bienestar con propósito. Crecimiento con integridad.",
     "social": {
-      "instagram": "https://www.instagram.com/naturessunshine.co",
-      "facebook": "https://www.facebook.com/naturessunshine.co",
-      "youtube": "https://www.youtube.com/@NaturesSunshineCO"
+      "instagram": "https://www.instagram.com/naturessunshine.pa",
+      "facebook": "https://www.facebook.com/naturessunshine.pa",
+      "youtube": "https://www.youtube.com/@NaturesSunshine"
     },
     "certifications": [
       {

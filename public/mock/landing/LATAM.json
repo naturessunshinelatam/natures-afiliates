@@ -1,29 +1,29 @@
 {
   "country": "LATAM",
   "hero": {
-    "title": "Bienestar que se comparte",
-    "subtitle": "Landing mock LATAM (fallback).",
+    "title": "Construye tu negocio con bienestar",
+    "subtitle": "Únete como distribuidor(a) independiente y comparte productos de calidad respaldados internacionalmente.",
     "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
-    "ctaPrimary": "Afíliate",
-    "ctaSecondary": "Catálogo"
+    "ctaPrimary": "Afíliate ahora",
+    "ctaSecondary": "Descargar catálogo"
   },
-  "supplementsTitle": "Suplementos",
-  "supplementsSubtitle": "Contenido de ejemplo.",
+  "supplementsTitle": "Suplementos destacados",
+  "supplementsSubtitle": "Productos premium con certificaciones internacionales que garantizan calidad y pureza.",
   "supplements": [
     {
       "name": "Omega Balance",
       "desc": "Soporte cardiovascular • Pureza verificada",
       "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Protección cardiovascular con ingredientes de alta calidad.",
+      "featuredDesc": "Protección cardiovascular diaria con ingredientes de alta calidad certificados.",
       "tags": ["Corazón", "Bienestar", "Premium"]
     },
     {
       "name": "Daily Greens",
-      "desc": "Energía suave • Vitaminas y minerales",
+      "desc": "Energía natural • Vitaminas y minerales",
       "img": "https://powerhealth.pro/sunshineuniversity/uploads/d6c577e5-b7ad-4e6e-9d61-d96130e29f67_file",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Energía funcional con mezcla verde y micronutrientes esenciales.",
+      "featuredDesc": "Mezcla verde con micronutrientes esenciales para energía sostenible durante el día.",
       "tags": ["Energía", "Verdes", "Vitalidad"]
     },
     {
@@ -31,7 +31,7 @@
       "desc": "Piel • Articulaciones • Recuperación",
       "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/1e303773-cbae-4272-8e03-6f9d07eb90ab",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Soporte de belleza y movilidad para tu rutina diaria.",
+      "featuredDesc": "Colágeno avanzado para soporte integral de belleza y movilidad funcional.",
       "tags": ["Piel", "Movilidad", "Recuperación"]
     },
     {
@@ -39,29 +39,148 @@
       "desc": "Rutina nocturna • Descanso profundo",
       "img": "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Aliado nocturno para dormir mejor y despertar con energía.",
+      "featuredDesc": "Fórmula nocturna diseñada para mejorar la calidad del sueño y despertar renovado.",
       "tags": ["Descanso", "Relajación", "Sueño"]
     }
   ],
   "feature": {
     "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
-    "imageAlt": "Testimonio de afiliado",
+    "imageAlt": "Testimonio de distribuidor",
     "videoUrl": "https://www.youtube.com/watch?v=cBVv3Uk2P0U",
     "quotes": [
-      "Natures cambió mi perspectiva sobre el emprendimiento.",
-      "Una comunidad real que se preocupa por tu éxito.",
-      "Desde el primer día supe que había tomado la decisión correcta."
+      "Natures me permitió transformar mi vida. Ahora tengo un negocio propio y ayudo a otros a mejorar su salud.",
+      "La comunidad de apoyo es increíble. Todos trabajan juntos para crecer y alcanzar metas.",
+      "Desde el primer día supe que había tomado la decisión correcta. Los resultados hablan por sí mismos."
     ],
-    "ctaText": "Comienza ahora"
+    "ctaText": "Comienza tu historia"
   },
   "catalog": {
-    "title": "Catálogo en PDF",
-    "text": "PDF de ejemplo.",
-    "pdfUrl": "/catalogo.pdf",
+    "title": "Guía de patrocinio",
+    "text": "Material completo de apoyo para presentar la marca y las líneas de productos principales.",
+    "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
     "panelImg": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80"
   },
   "testimonialsTitle": "Testimonios",
-  "testimonialsSubtitle": "Contenido de ejemplo.",
-  "testimonials": [],
-  "footer": { "certs": [], "social": {} }
+  "testimonialsSubtitle": "Historias reales de distribuidores que transformaron su vida con Natures.",
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "María Fernanda G.",
+      "role": "Distribuidora",
+      "text": "El enfoque humano de Natures hace que las personas conecten con la marca rápidamente.",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Andrés R.",
+      "role": "Líder Regional",
+      "text": "Material claro, soporte constante y un mensaje genuino de salud y bienestar.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Laura P.",
+      "role": "Consultora",
+      "text": "Me encantó lo simple que es todo. Se entiende fácil y se comparte mejor.",
+      "rating": 4
+    },
+    {
+      "id": 4,
+      "name": "Ricardo M.",
+      "role": "Distribuidor",
+      "text": "La presentación es profesional y transmite confianza desde el primer contacto.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Gabriela S.",
+      "role": "Líder",
+      "text": "La comunidad de Natures es increíble. Todos se apoyan para crecer juntos.",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "name": "Diego T.",
+      "role": "Consultor Senior",
+      "text": "Ganar dinero mientras ayudas a mejorar la salud de otros es posible con Natures.",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "name": "Sofía V.",
+      "role": "Distribuidora",
+      "text": "Las capacitaciones son excelentes. Siempre hay webinars y recursos para mejorar.",
+      "rating": 4
+    }
+  ],
+  "pendingTestimonials": [
+    {
+      "id": 101,
+      "name": "Carlos A.",
+      "role": "Distribuidor Nuevo",
+      "email": "carlos@example.com",
+      "text": "Apenas llevo dos semanas y ya estoy viendo resultados. Lo recomiendo totalmente.",
+      "rating": 5,
+      "status": "pending",
+      "submittedAt": "2026-03-02T10:00:00Z"
+    }
+  ],
+  "join": {
+    "title": "Únete ahora",
+    "subtitle": "Completa el formulario y recibe información completa para comenzar tu negocio.",
+    "contact": {
+      "email": "consultores@natures-afiliates.com",
+      "whatsapp": "+1 800 000 0000",
+      "schedule": "Lun–Vie • 9:00–18:00 (GMT-5)"
+    },
+    "downloads": {
+      "catalogUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
+      "starterGuideUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file"
+    },
+    "nextSteps": {
+      "title": "¿Qué sigue?",
+      "description": "Te enviaremos toda la información sobre el plan de compensación y cómo iniciar con tu kit de productos."
+    }
+  },
+  "footer": {
+    "brand": "Natures Afiliates",
+    "tagline": "Bienestar con propósito. Crecimiento con integridad.",
+    "social": {
+      "instagram": "https://www.instagram.com/naturessunshine",
+      "facebook": "https://www.facebook.com/naturessunshine",
+      "youtube": "https://www.youtube.com/@NaturesSunshine"
+    },
+    "certifications": [
+      {
+        "name": "ISO Certified",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/isocertified.svg",
+        "url": null
+      },
+      {
+        "name": "USDA Organic",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=64,height=auto,format=webp,quality=75,fit=contain/siteassets/footer/certificates/usda.webp",
+        "url": "https://www.usda.gov/"
+      },
+      {
+        "name": "NSF",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/contentassets/931e2af34e42479ca0c47dc3cd20c98f/nsf-logo2025-nsp4.png",
+        "url": "https://www.nsf.gov/"
+      },
+      {
+        "name": "Kosher",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/kosher.svg",
+        "url": null
+      },
+      {
+        "name": "TGA Certified",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/tga.svg",
+        "url": "https://www.tga.gov.au/resources/resources/forms/request-certificates-or-certified-copies-tga-licences-and-certificates"
+      },
+      {
+        "name": "Halal",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/halal.svg",
+        "url": null
+      }
+    ]
+  }
 }
