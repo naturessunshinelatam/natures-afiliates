@@ -55,33 +55,41 @@
     "ctaText": "Comienza tu historia"
   },
   "catalog": {
-    "title": "Catálogo en PDF",
+    "title": "Guita de patrocinio",
     "text": "Material de apoyo para presentar la marca y sus líneas principales.",
-    "pdfUrl": "/catalogo.pdf",
+    "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
     "panelImg": "https://powerhealth.pro/sunshineuniversity/uploads/c7c932b3-a7bf-4329-bcf7-876a6965d229_file"
   },
   "testimonialsTitle": "Testimonios",
   "testimonialsSubtitle": "Arrastra para navegar o usa los botones.",
   "testimonials": [
     {
+      "id": 1,
       "name": "María G.",
       "role": "Consultora",
-      "text": "El enfoque es humano; la gente conecta con la marca rápido."
+      "text": "El enfoque es humano; la gente conecta con la marca rápido.",
+      "rating": 5
     },
     {
+      "id": 2,
       "name": "David R.",
       "role": "Líder",
-      "text": "Material claro, soporte constante y un mensaje de salud real."
+      "text": "Material claro, soporte constante y un mensaje de salud real.",
+      "rating": 5
     },
     {
+      "id": 3,
       "name": "Karla P.",
       "role": "Afiliada",
-      "text": "Me gustó lo simple: se entiende y se comparte fácil."
+      "text": "Me gustó lo simple: se entiende y se comparte fácil.",
+      "rating": 4
     },
     {
+      "id": 4,
       "name": "Luis M.",
       "role": "Consultor",
-      "text": "La presentación es limpia y transmite confianza desde el primer vistazo."
+      "text": "La presentación es limpia y transmite confianza desde el primer vistazo.",
+      "rating": 5
     }
   ],
   "footer": {

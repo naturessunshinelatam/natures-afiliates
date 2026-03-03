@@ -1,0 +1,75 @@
+@use '../styles/variables' as *;
+
+.star-rating {
+  display: inline-flex;
+  gap: 4px;
+  align-items: center;
+
+  &--sm {
+    .star {
+      font-size: 0.9rem;
+    }
+  }
+
+  &--md {
+    .star {
+      font-size: 1.1rem;
+    }
+  }
+
+  &--lg {
+    .star {
+      font-size: 1.4rem;
+    }
+  }
+
+  .star {
+    background: none;
+    border: none;
+    color: rgba(234, 247, 251, 0.28);
+    cursor: pointer;
+    transition: color 0.15s ease, transform 0.1s ease;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+
+    &:disabled {
+      cursor: not-allowed;
+    }
+
+    &--filled {
+      color: $a;
+    }
+
+    &--half {
+      background: linear-gradient(
+        90deg,
+        $a 50%,
+        rgba(234, 247, 251, 0.28) 50%
+      );
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    &:not(:disabled):hover {
+      transform: scale(1.15);
+      color: $b;
+    }
+
+    &:not(:disabled):focus-visible {
+      outline: 2px solid color-mix(in srgb, $a 55%, white 45%);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+  }
+
+  &__label {
+    margin-left: 8px;
+    font-size: 0.9rem;
+    color: $muted;
+    font-weight: 600;
+  }
+}

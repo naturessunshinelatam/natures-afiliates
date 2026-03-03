@@ -55,33 +55,84 @@
     "ctaText": "Únete ahora"
   },
   "catalog": {
-    "title": "Catálogo en PDF",
+    "title": "Guia de patrocinio",
     "text": "Material de apoyo para presentar la marca y sus líneas principales.",
-    "pdfUrl": "/catalogo.pdf",
+    "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
     "panelImg": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80"
   },
   "testimonialsTitle": "Testimonios",
   "testimonialsSubtitle": "Arrastra para navegar o usa los botones.",
   "testimonials": [
     {
+      "id": 1,
       "name": "María G.",
       "role": "Consultora",
-      "text": "El enfoque es humano; la gente conecta con la marca rápido."
+      "text": "El enfoque es humano; la gente conecta con la marca rápido.",
+      "rating": 5
     },
     {
+      "id": 2,
       "name": "David R.",
       "role": "Líder",
-      "text": "Material claro, soporte constante y un mensaje de salud real."
+      "text": "Material claro, soporte constante y un mensaje de salud real.",
+      "rating": 5
     },
     {
+      "id": 3,
       "name": "Karla P.",
       "role": "Afiliada",
-      "text": "Me gustó lo simple: se entiende y se comparte fácil."
+      "text": "Me gustó lo simple: se entiende y se comparte fácil.",
+      "rating": 4
     },
     {
+      "id": 4,
       "name": "Luis M.",
       "role": "Consultor",
-      "text": "La presentación es limpia y transmite confianza desde el primer vistazo."
+      "text": "La presentación es limpia y transmite confianza desde el primer vistazo.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Sofía T.",
+      "role": "Consultora",
+      "text": "Increíble comunidad de apoyo. Todos queremos que crezcas con nosotros.",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "name": "Javier N.",
+      "role": "Líder Regional",
+      "text": "Ganar dinero haciendo el bien es posible. Natures lo demostró.",
+      "rating": 5
+    },
+    {
+      "id": 7,
+      "name": "Ana V.",
+      "role": "Afiliada",
+      "text": "Excelente preparación y webinares constantes para mejorar.",
+      "rating": 4
+    }
+  ],
+  "pendingTestimonials": [
+    {
+      "id": 101,
+      "name": "Carlos M.",
+      "role": "Consultor Nuevo",
+      "email": "carlos@example.com",
+      "text": "Apenas llevo 2 semanas y ya veo resultados. Recomiendo 100%.",
+      "rating": 5,
+      "status": "pending",
+      "submittedAt": "2026-03-02T10:30:00Z"
+    },
+    {
+      "id": 102,
+      "name": "Patricia R.",
+      "role": "Consultora",
+      "email": "patricia@example.com",
+      "text": "Natures cambió mi forma de pensar sobre el emprendimiento.",
+      "rating": 4,
+      "status": "pending",
+      "submittedAt": "2026-03-01T15:45:00Z"
     }
   ],
   "footer": {

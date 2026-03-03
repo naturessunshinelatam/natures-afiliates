@@ -1,42 +1,26 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useActiveContent } from "../lib/useActiveContent";
+import { StarRating } from "../ui/StarRating";
+import { TestimonialForm } from "./TestimonialForm";
 import "./Testimonials.scss";
-
-const data = [
-  {
-    name: "María G.",
-    role: "Consultora",
-    text: "El enfoque es humano; la gente conecta con la marca rápido.",
-  },
-  {
-    name: "David R.",
-    role: "Líder",
-    text: "Material claro, soporte constante y un mensaje de salud real.",
-  },
-  {
-    name: "Karla P.",
-    role: "Afiliada",
-    text: "Me gustó lo simple: se entiende y se comparte fácil.",
-  },
-  {
-    name: "Luis M.",
-    role: "Consultor",
-    text: "La presentación es limpia y transmite confianza desde el primer vistazo.",
-  },
-];
 
 export const Testimonials = () => {
   const content = useActiveContent();
   const ref = useRef(null);
   const [active, setActive] = useState(0);
 
-  const items = useMemo(() => content?.testimonials || [], [content]);
+  // Get top 7 best-rated testimonials
+  const items = useMemo(() => {
+    const testimonials = content?.testimonials || [];
+    return [...testimonials]
+      .sort((a, b) => (b.rating || 0) - (a.rating || 0))
+      .slice(0, 7);
+  }, [content]);
 
   const slide = (dir) =>
     ref.current?.scrollBy({ left: dir * 320, behavior: "smooth" });
 
   // Drag mouse touch
-
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -84,7 +68,6 @@ export const Testimonials = () => {
   }, []);
 
   // Detect active item on scroll
-
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -128,7 +111,7 @@ export const Testimonials = () => {
     });
   };
 
-  if (!content || !content.testimonials) return null;
+  if (!content) return null;
 
   return (
     <div className="wrap section">
@@ -155,28 +138,32 @@ export const Testimonials = () => {
         </div>
       </header>
 
-      <div className="rail" ref={ref}>
-        {items.map((x) => (
-          <figure className="quote" key={x.name}>
-            <blockquote>"{x.text}"</blockquote>
-            <figcaption>
-              <strong>{x.name}</strong>
-              <span className="muted">{x.role}</span>
-            </figcaption>
-          </figure>
-        ))}
-      </div>
+      {/* Testimonios carousel */}
+      {items.length > 0 && (
+        <>
+          <div className="rail" ref={ref}>
+            {items.map((x) => (
+              <figure className="quote testimonial" key={x.id || x.name}>
+                <blockquote>"{x.text}"</blockquote>
+                <div className="quote__footer">
+                  <div>
+                    <strong>{x.name}</strong>
+                    {x.role && <span className="muted">{x.role}</span>}
+                  </div>
+                  {x.rating && (
+                    <div className="quote__rating">
+                      <StarRating rating={x.rating} readOnly size="sm" />
+                    </div>
+                  )}
+                </div>
+              </figure>
+            ))}
+          </div>
+        </>
+      )}
 
-      <div className="dots" aria-label="Indicadores de carrusel">
-        {items.map((_, i) => (
-          <button
-            key={i}
-            className={`dot ${i === active ? "dot--on" : ""}`}
-            onClick={() => goDot(i)}
-            aria-label={`Ir a testimonio ${i + 1}`}
-          />
-        ))}
-      </div>
+      {/* Submit Testimonial Form */}
+      <TestimonialForm />
     </div>
   );
 };

@@ -11,7 +11,7 @@ import "./Navbar.scss";
 const links = [
   { id: "hero", label: "Inicio" },
   { id: "supplements", label: "Suplementos" },
-  { id: "catalog", label: "Catálogo" },
+  { id: "sponsorship", label: "Guía de patrocinio" },
   { id: "feature", label: "Beneficios" },
   { id: "testimonials", label: "Testimonios" },
   { id: "join", label: "Afíliate" },
