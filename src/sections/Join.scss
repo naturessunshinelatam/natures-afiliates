@@ -70,6 +70,26 @@
       outline: none !important;
       border-color: rgba(56, 189, 248, 0.55) !important;
     }
+
+    &.error {
+      border-color: rgba(239, 68, 68, 0.7) !important;
+    }
+  }
+
+  .error-message {
+    display: block;
+    color: rgba(239, 68, 68, 0.9) !important;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  .success-message {
+    background: rgba(45, 212, 191, 0.15) !important;
+    border: 1px solid rgba(45, 212, 191, 0.4) !important;
+    border-radius: 12px;
+    color: rgba(45, 212, 191, 1) !important;
+    padding: 12px;
+    margin-bottom: 12px;
   }
 
   .button {
@@ -81,6 +101,17 @@
     color: #052027 !important;
     font-weight: 900 !important;
     padding: 12px 14px !important;
+    cursor: pointer !important;
+    transition: opacity 0.2s ease !important;
+
+    &:hover:not(:disabled) {
+      opacity: 0.9 !important;
+    }
+
+    &:disabled {
+      opacity: 0.6 !important;
+      cursor: not-allowed !important;
+    }
   }
 
   .indicates-required,
