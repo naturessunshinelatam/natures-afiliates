@@ -11,8 +11,6 @@ export const JoinForm = () => {
   });
 
   const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState(null); // 'success' | 'error' | null
 
   const validateEmail = (email) => {
     const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -52,82 +50,50 @@ export const JoinForm = () => {
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
 
-    // For the gdpr checkbox, we need to handle it specially
-    if (name === "gdpr[90974]") {
-      setFormData((prev) => ({
-        ...prev,
-        gdprConsent: checked,
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: type === "checkbox" ? checked : value,
-      }));
-    }
+    // Map Mailchimp field names to form state keys
+    const fieldMap = {
+      EMAIL: "email",
+      PAIS: "pais",
+      LNAME: "apellido",
+      FNAME: "nombre",
+      TELEFONO: "telefono",
+      "gdpr[90974]": "gdprConsent",
+    };
+
+    const stateKey = fieldMap[name] || name;
+
+    setFormData((prev) => ({
+      ...prev,
+      [stateKey]: type === "checkbox" ? checked : value,
+    }));
 
     // Clear error for this field when user starts typing
-    if (errors[name] || (name === "gdpr[90974]" && errors.gdprConsent)) {
-      setErrors((prev) => ({ ...prev, [name]: null, gdprConsent: null }));
+    if (errors[stateKey]) {
+      setErrors((prev) => ({ ...prev, [stateKey]: null }));
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    // Reset status
-    setSubmitStatus(null);
 
     // Validate form
     if (!validateForm()) {
       return;
     }
 
-    setIsSubmitting(true);
-
-    try {
-      // Create form data for Mailchimp
-      const formElement = e.target;
-      const formDataToSend = new FormData(formElement);
-
-      // Submit to Mailchimp
-      const response = await fetch(formElement.action, {
-        method: "POST",
-        body: formDataToSend,
-        mode: "no-cors", // Mailchimp doesn't support CORS, so we use no-cors
-      });
-
-      // Since we're using no-cors, we won't get a readable response
-      // We'll assume success if no error was thrown
-      setSubmitStatus("success");
-
-      // Reset form
-      setFormData({
-        email: "",
-        pais: "",
-        apellido: "",
-        nombre: "",
-        telefono: "",
-        gdprConsent: false,
-      });
-
-      // Show success message
-      setTimeout(() => setSubmitStatus(null), 5000);
-    } catch (error) {
-      console.error("Error submitting form:", error);
-      setSubmitStatus("error");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const formElement = e.currentTarget;
+    formElement.submit();
   };
 
   return (
     <div id="mc_embed_signup" className="mc">
       <form
-        action="https://naturessunshinelatam.us12.list-manage.com/subscribe/post?u=98c81c00200b439824130a329&amp;id=c0296ad042&amp;f_id=005c6ae9f0"
+        action="https://naturessunshinelatam.us12.list-manage.com/subscribe/post?u=98c81c00200b439824130a329&id=c0296ad042&f_id=005c6ae9f0"
         method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
         className="validate"
+        target="_blank"
         onSubmit={handleSubmit}
         noValidate
       >
@@ -278,21 +244,6 @@ export const JoinForm = () => {
             </div>
           </div>
 
-          {/* Response Messages */}
-          <div id="mce-responses" className="clear">
-            {submitStatus === "success" && (
-              <div className="response success-message" role="alert">
-                ¡Gracias! Te has suscrito exitosamente.
-              </div>
-            )}
-            {submitStatus === "error" && (
-              <div className="response error-message" role="alert">
-                Hubo un error al enviar el formulario. Por favor intenta de
-                nuevo.
-              </div>
-            )}
-          </div>
-
           {/* Honeypot */}
           <div
             aria-hidden="true"
@@ -313,8 +264,7 @@ export const JoinForm = () => {
               name="subscribe"
               id="mc-embedded-subscribe"
               className="button"
-              value={isSubmitting ? "Enviando..." : "Afiliarme"}
-              disabled={isSubmitting}
+              value="Afiliarme"
             />
           </div>
         </div>
