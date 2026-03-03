@@ -79,7 +79,7 @@ export const Hero = () => {
           <a className="btn" href="#join">
             {content.hero.ctaPrimary}
           </a>
-          <a className="btn" href="#catalog">
+          <a className="btn" href="#sponsorship">
             {content.hero.ctaSecondary}
           </a>
         </div>

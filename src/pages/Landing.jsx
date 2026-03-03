@@ -29,7 +29,7 @@ export const Landing = () => {
         <section id="supplements">
           <Supplements />
         </section>
-        <section id="catalog">
+        <section id="sponsorship">
           <Catalog />
         </section>
         {content?.feature && (

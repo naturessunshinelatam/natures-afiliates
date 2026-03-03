@@ -191,7 +191,7 @@ export const Join = () => {
             <p className="muted">
               Te enviaremos información del plan y cómo iniciar con tu kit.
             </p>
-            <a className="btn btn--ghost" href="#catalog">
+            <a className="btn btn--ghost" href="#sponsorship">
               Descargar catálogo
             </a>
           </div>

@@ -55,53 +55,74 @@
     "ctaText": "Súmate al equipo"
   },
   "catalog": {
-    "title": "Catálogo en PDF",
+    "title": "Guia de patrocinio",
     "text": "Material de apoyo para presentar la marca y sus líneas principales.",
-    "pdfUrl": "/catalogo.pdf",
+    "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
     "panelImg": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80"
   },
   "testimonialsTitle": "Testimonios",
   "testimonialsSubtitle": "Arrastra para navegar o usa los botones.",
   "testimonials": [
     {
+      "id": 1,
       "name": "María G.",
       "role": "Consultora",
-      "text": "El enfoque es humano; la gente conecta con la marca rápido."
+      "text": "El enfoque es humano; la gente conecta con la marca rápido.",
+      "rating": 5
     },
     {
+      "id": 2,
       "name": "David R.",
       "role": "Líder",
-      "text": "Material claro, soporte constante y un mensaje de salud real."
+      "text": "Material claro, soporte constante y un mensaje de salud real.",
+      "rating": 5
     },
     {
+      "id": 3,
       "name": "Karla P.",
       "role": "Afiliada",
-      "text": "Me gustó lo simple: se entiende y se comparte fácil."
+      "text": "Me gustó lo simple: se entiende y se comparte fácil.",
+      "rating": 4
     },
     {
+      "id": 4,
       "name": "Luis M.",
       "role": "Consultor",
-      "text": "La presentación es limpia y transmite confianza desde el primer vistazo."
+      "text": "La presentación es limpia y transmite confianza desde el primer vistazo.",
+      "rating": 5
     },
     {
+      "id": 5,
       "name": "Julio C.",
       "role": "Consultora",
-      "text": "El enfoque es humano; la gente conecta con la marca rápido."
+      "text": "Desde Colombia, veo un futuro brillante con Natures. Increíble oportunidad.",
+      "rating": 5
     },
     {
+      "id": 6,
       "name": "Arminta R.",
       "role": "Líder",
-      "text": "Material claro, soporte constante y un mensaje de salud real."
+      "text": "El soporte de líderes colombianos es insuperable. Crecimiento garantizado.",
+      "rating": 5
     },
     {
+      "id": 7,
       "name": "Catalina P.",
       "role": "Afiliada",
-      "text": "Me gustó lo simple: se entiende y se comparte fácil."
-    },
+      "text": "Compartir bienestar mientras ganas dinero. ¡Perfecto!",
+      "rating": 4
+    }
+  ],
+  "pendingTestimonials": [
     {
+      "id": 101,
       "name": "Serem M.",
       "role": "Consultor",
-      "text": "La presentación es limpia y transmite confianza desde el primer vistazo."
+      "email": "serem@example.com",
+      "text": "Primera semana en Natures y no me arrepiento. ¡Gracias!",
+      "rating": 5,
+      "status": "pending",
+      "submittedAt": "2026-03-02T14:20:00Z"
     }
   ],
   "footer": {
