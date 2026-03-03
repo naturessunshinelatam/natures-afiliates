@@ -92,6 +92,23 @@
       "rating": 5
     }
   ],
+  "join": {
+    "title": "Afíliate",
+    "subtitle": "Completa el formulario y recibe información para comenzar.",
+    "contact": {
+      "email": "consultores.gt@natures-afiliates.com",
+      "whatsapp": "+502 2222 3333",
+      "schedule": "Lun–Vie • 8:00–17:00 (GMT-6)"
+    },
+    "downloads": {
+      "catalogUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
+      "starterGuideUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file"
+    },
+    "nextSteps": {
+      "title": "¿Qué sigue?",
+      "description": "Te enviaremos información del plan y cómo iniciar con tu kit."
+    }
+  },
   "footer": {
     "certs": ["GMP", "ISO 22000"],
     "social": {
