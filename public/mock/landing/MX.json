@@ -1,14 +1,14 @@
 {
   "country": "MX",
   "hero": {
-    "title": "Impulsa tu negocio con bienestar",
-    "subtitle": "Únete como consultor(a) y comparte productos con respaldo y comunidad.",
+    "title": "Échale ganas a tu negocio con bienestar",
+    "subtitle": "Conviértete en distribuidor(a) independiente. Comparte productos de calidad y construye tu chamba desde casa.",
     "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
     "ctaPrimary": "Afíliate",
     "ctaSecondary": "Descargar catálogo"
   },
   "supplementsTitle": "Suplementos destacados",
-  "supplementsSubtitle": "Productos de ejemplo (mock). Se reemplazarán por los de tu país.",
+  "supplementsSubtitle": "Nuestra línea premium de suplementos respaldados con certificaciones internacionales.",
   "supplements": [
     {
       "name": "Omega Balance",
@@ -48,9 +48,9 @@
     "imageAlt": "Testimonio de afiliado",
     "videoUrl": "https://youtube.com/shorts/_1AxO-NHo1o",
     "quotes": [
-      "Mi vida cambió completamente desde que me afilié. No solo gano dinero, sino que ayudo a otros.",
-      "La comunidad de Natures es increíble. Encontré amigos y mentores que me apoyan todos los días.",
-      "No creía que esto funcionaría, pero después de 3 meses mis resultados hablan solos."
+      "¡Órale! Desde que me uní a Natures, mi vida cambió. No es solo ganar dinero, es ayudar a la raza.",
+      "Aquí en México necesitábamos esto: una chamba honesta que puedes hacer desde tu casa. Natures es padre.",
+      "Al principio no le creía, pero llevo 3 meses y los resultados están de pelos. ¡100% recomendado!"
     ],
     "ctaText": "Únete ahora"
   },
@@ -65,71 +65,76 @@
   "testimonials": [
     {
       "id": 1,
-      "name": "María G.",
+      "name": "María Guadalupe G.",
       "role": "Consultora",
       "text": "El enfoque es humano; la gente conecta con la marca rápido.",
       "rating": 5
     },
     {
       "id": 2,
-      "name": "David R.",
-      "role": "Líder",
-      "text": "Material claro, soporte constante y un mensaje de salud real.",
+      "name": "José Luis R.",
+      "role": "Líder Regional",
+      "text": "El material está muy completo y el soporte es al 100. Aquí sí se trabaja en serio.",
       "rating": 5
     },
     {
       "id": 3,
-      "name": "Karla P.",
+      "name": "Karla Patricia P.",
       "role": "Afiliada",
       "text": "Me gustó lo simple: se entiende y se comparte fácil.",
       "rating": 4
     },
     {
       "id": 4,
-      "name": "Luis M.",
-      "role": "Consultor",
-      "text": "La presentación es limpia y transmite confianza desde el primer vistazo.",
+      "name": "Luis Miguel M.",
+      "role": "Distribuidor",
+      "text": "Todo muy profesional. La presentación está cañona y transmite mucha confianza.",
       "rating": 5
     },
     {
       "id": 5,
-      "name": "Sofía T.",
+      "name": "Sofía Teresa T.",
       "role": "Consultora",
       "text": "Increíble comunidad de apoyo. Todos queremos que crezcas con nosotros.",
+      "text": "La comunidad es increíble. Aquí todos nos echamos la mano para crecer juntos.",
       "rating": 5
     },
     {
       "id": 6,
-      "name": "Javier N.",
+      "name": "Javier Noé N.",
       "role": "Líder Regional",
       "text": "Ganar dinero haciendo el bien es posible. Natures lo demostró.",
+      "text": "Ganar buen dinero haciendo el bien sí se puede. Natures me lo demostró.",
       "rating": 5
     },
     {
       "id": 7,
-      "name": "Ana V.",
+      "name": "Ana Victoria V.",
       "role": "Afiliada",
       "text": "Excelente preparación y webinares constantes para mejorar.",
+      "text": "Las capacitaciones están de lujo. Siempre hay webinars para aprender más.",
       "rating": 4
     }
   ],
   "pendingTestimonials": [
     {
       "id": 101,
-      "name": "Carlos M.",
+      "name": "Carlos Manuel M.",
       "role": "Consultor Nuevo",
       "email": "carlos@example.com",
       "text": "Apenas llevo 2 semanas y ya veo resultados. Recomiendo 100%.",
+      "text": "Apenas llevo 2 semanas y ya estoy viendo jale. Lo recomiendo al 100%.",
       "rating": 5,
       "status": "pending",
       "submittedAt": "2026-03-02T10:30:00Z"
     },
     {
       "id": 102,
-      "name": "Patricia R.",
+      "name": "Patricia Rocío R.",
       "role": "Consultora",
       "email": "patricia@example.com",
       "text": "Natures cambió mi forma de pensar sobre el emprendimiento.",
+      "text": "Natures me cambió el chip. Ahora sí creo que se puede vivir del emprendimiento.",
       "rating": 4,
       "status": "pending",
       "submittedAt": "2026-03-01T15:45:00Z"
@@ -153,13 +158,44 @@
     }
   },
   "footer": {
-    "certs": ["GMP", "ISO 22000"],
+    "brand": "Natures Afiliates",
+    "tagline": "Bienestar con calma. Crecimiento con propósito.",
     "social": {
-      "instagram": "#",
-      "facebook": "#",
-      "youtube": "#",
-      "linkedin": "#",
-      "linkedin": "#"
-    }
+      "instagram": "https://www.instagram.com/naturessunshine.mx",
+      "facebook": "https://www.facebook.com/naturessunshine.mx",
+      "youtube": "https://www.youtube.com/@NaturesSunshineMX"
+    },
+    "certifications": [
+      {
+        "name": "ISO Certified",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/isocertified.svg",
+        "url": null
+      },
+      {
+        "name": "USDA Organic",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=64,height=auto,format=webp,quality=75,fit=contain/siteassets/footer/certificates/usda.webp",
+        "url": "https://www.usda.gov/"
+      },
+      {
+        "name": "NSF",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/contentassets/931e2af34e42479ca0c47dc3cd20c98f/nsf-logo2025-nsp4.png",
+        "url": "https://www.nsf.gov/"
+      },
+      {
+        "name": "Kosher",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/kosher.svg",
+        "url": null
+      },
+      {
+        "name": "TGA Certified",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/tga.svg",
+        "url": "https://www.tga.gov.au/resources/resources/forms/request-certificates-or-certified-copies-tga-licences-and-certificates"
+      },
+      {
+        "name": "Halal",
+        "img": "https://uscoreprod.naturessunshine.com/cdn-cgi/image/format=webp,quality=90,fit=contain/siteassets/footer/certificates/halal.svg",
+        "url": null
+      }
+    ]
   }
 }

@@ -8,11 +8,28 @@
 
   &__grid {
     display: grid;
-    gap: 16px;
+    gap: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
 
     @media (min-width: $breakpoint-tablet) {
-      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       align-items: start;
+      gap: 40px;
+    }
+  }
+
+  &__section {
+    &--center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      h4 {
+        text-align: center;
+      }
     }
   }
 
@@ -23,8 +40,66 @@
 
   &__links {
     display: flex;
-    flex-direction: column;
-    gap: 8px;
+    flex-direction: row;
+    gap: 12px;
+    margin-top: 8px;
+  }
+
+  &__social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    color: $text;
+    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+
+    &:hover {
+      background: linear-gradient(135deg, $a, $b);
+      color: #052027;
+      transform: translateY(-2px);
+    }
+  }
+
+  &__certs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  &__cert-link,
+  &__cert-item {
+    display: inline-block;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    border-radius: 8px;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  &__cert-link:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+
+  &__cert-img {
+    height: 32px;
+    width: auto;
+    object-fit: contain;
+    opacity: 0.9;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+
+    @media (min-width: $breakpoint-tablet) {
+      height: 40px;
+    }
+
+    &:hover {
+      opacity: 1;
+      transform: scale(1.05);
+    }
   }
 
   &__list {
