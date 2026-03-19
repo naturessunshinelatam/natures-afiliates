@@ -1,5 +1,6 @@
 import { useActiveContent } from "../lib/useActiveContent";
 import { JoinForm } from "./JoinForm";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
 import "./Join.scss";
 
 export const Join = () => {
@@ -27,6 +28,11 @@ export const Join = () => {
             <p className="muted">{join.contact.email}</p>
             <p className="muted">WhatsApp: {join.contact.whatsapp}</p>
             <p className="muted">{join.contact.schedule}</p>
+            <WhatsAppButton
+              phone={join.contact.whatsapp}
+              label="Hablar por WhatsApp"
+              className="join__wa"
+            />
           </div>
           <div className="sideCard sideCard--grad">
             <h3>{join.nextSteps.title}</h3>

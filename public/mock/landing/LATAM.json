@@ -1,11 +1,12 @@
 {
   "country": "LATAM",
+  "enable": true,
   "hero": {
-    "title": "Construye tu negocio con bienestar",
-    "subtitle": "Únete como distribuidor(a) independiente y comparte productos de calidad respaldados internacionalmente.",
-    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
-    "ctaPrimary": "Afíliate ahora",
-    "ctaSecondary": "Descargar catálogo"
+    "title": "Únete a la Green Revolution",
+    "subtitle": "Hoy el wellness es uno de los movimientos de crecimiento más grandes del mundo",
+    "image": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/6bcd80ea-179f-4a2c-9edd-1f7ea59c46ee_hero.png",
+    "ctaPrimary": "Conviértete en Sunshiner",
+    "ctaSecondary": "Whatsapp"
   },
   "supplementsTitle": "Suplementos destacados",
   "supplementsSubtitle": "Productos premium con certificaciones internacionales que garantizan calidad y pureza.",

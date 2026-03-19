@@ -1,30 +1,41 @@
 {
   "country": "MX",
+  "enable": true,
   "hero": {
-    "title": "Échale ganas a tu negocio con bienestar",
-    "subtitle": "Conviértete en distribuidor(a) independiente. Comparte productos de calidad y construye tu chamba desde casa.",
-    "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
-    "ctaPrimary": "Afíliate",
-    "ctaSecondary": "Descargar catálogo"
+    "title": "Únete a la Green Revolution",
+    "subtitle": "Hoy el wellness es uno de los movimientos de crecimiento más grandes del mundo",
+    "image": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/6bcd80ea-179f-4a2c-9edd-1f7ea59c46ee_hero.png",
+    "ctaPrimary": "Conviértete en Sunshiner",
+    "ctaSecondary": "Whatsapp"
   },
-  "supplementsTitle": "Suplementos destacados",
-  "supplementsSubtitle": "Nuestra línea premium de suplementos respaldados con certificaciones internacionales.",
+  "supplementsTitle": "Cada vez más personas están buscando:",
+  "supplementsSubtitle": "",
   "supplements": [
     {
-      "name": "Omega Balance",
-      "desc": "Soporte cardiovascular • Pureza verificada",
-      "img": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
+      "name": "Por eso nace la Green Revolution",
+      "desc": "sentirse mejor • tener más energía • crear hábitos saludables • compartir bienestar con otros  ",
+      "img": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/4b22a155-bc9d-4d96-b0a9-367df1013ebf_GreenRevo.png",
       "featuredTitle": "Producto estrella",
-      "featuredDesc": "Fórmula premium para cuidado del corazón y equilibrio diario.",
-      "tags": ["Corazón", "Omega", "Pureza"]
+      "featuredDesc": "Un movimiento de personas que están llevando el bienestar natural a más hogares y al mismo tiempo están construyendo una oportunidad de crecimiento. Si amas el wellness, te gusta compartir lo que te funciona y quieres generar ingresos haciendo algo que te apasiona… ",
+      "tags": [
+        "sentirse mejor",
+        "tener más energía",
+        "crear hábitos saludables",
+        "compartir bienestar con otros"
+      ]
     },
     {
-      "name": "Daily Greens",
-      "desc": "Energía suave • Vitaminas y minerales",
-      "img": "https://powerhealth.pro/sunshineuniversity/uploads/d6c577e5-b7ad-4e6e-9d61-d96130e29f67_file",
-      "featuredTitle": "Producto estrella",
-      "featuredDesc": "Mezcla verde de alto valor nutricional para mantener energía sostenible.",
-      "tags": ["Energía", "Verdes", "Nutrición"]
+      "name": "¿Qué significa ser Sunshiner?",
+      "desc": "Ser Sunshiner es formar parte de una comunidad que cree en:",
+      "img": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/35ed6bf1-c284-4213-8c90-8636f04594ed_Sunshiner.png",
+      "featuredTitle": "Como Sunshiner puedes:",
+      "featuredDesc": "• Comprar productos con 45% de descuento • Generar ganancia por venta directa • Crear y desarrollar tu propio equipo de Sunshiners • Construir un negocio presente en 8 países de LATAM • Viajar por el mundo en Convenciones Internacionales ",
+      "tags": [
+        "bienestar natular",
+        "crecimiento personal",
+        "comunidad",
+        "impacto positivo"
+      ]
     },
     {
       "name": "Collagen+",
@@ -95,7 +106,6 @@
       "id": 5,
       "name": "Sofía Teresa T.",
       "role": "Consultora",
-      "text": "Increíble comunidad de apoyo. Todos queremos que crezcas con nosotros.",
       "text": "La comunidad es increíble. Aquí todos nos echamos la mano para crecer juntos.",
       "rating": 5
     },
@@ -103,7 +113,6 @@
       "id": 6,
       "name": "Javier Noé N.",
       "role": "Líder Regional",
-      "text": "Ganar dinero haciendo el bien es posible. Natures lo demostró.",
       "text": "Ganar buen dinero haciendo el bien sí se puede. Natures me lo demostró.",
       "rating": 5
     },
@@ -111,7 +120,6 @@
       "id": 7,
       "name": "Ana Victoria V.",
       "role": "Afiliada",
-      "text": "Excelente preparación y webinares constantes para mejorar.",
       "text": "Las capacitaciones están de lujo. Siempre hay webinars para aprender más.",
       "rating": 4
     }
@@ -122,7 +130,6 @@
       "name": "Carlos Manuel M.",
       "role": "Consultor Nuevo",
       "email": "carlos@example.com",
-      "text": "Apenas llevo 2 semanas y ya veo resultados. Recomiendo 100%.",
       "text": "Apenas llevo 2 semanas y ya estoy viendo jale. Lo recomiendo al 100%.",
       "rating": 5,
       "status": "pending",
@@ -133,7 +140,6 @@
       "name": "Patricia Rocío R.",
       "role": "Consultora",
       "email": "patricia@example.com",
-      "text": "Natures cambió mi forma de pensar sobre el emprendimiento.",
       "text": "Natures me cambió el chip. Ahora sí creo que se puede vivir del emprendimiento.",
       "rating": 4,
       "status": "pending",

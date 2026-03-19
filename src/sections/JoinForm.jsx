@@ -1,109 +1,20 @@
-import { useState } from "react";
-
 export const JoinForm = () => {
-  const [formData, setFormData] = useState({
-    email: "",
-    pais: "",
-    apellido: "",
-    nombre: "",
-    telefono: "",
-    gdprConsent: false,
-  });
-
-  const [errors, setErrors] = useState({});
-
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
-  const validatePhone = (phone) => {
-    // Accepts numbers, spaces, +, -, and parentheses
-    const re = /^[\d\s+\-()]+$/;
-    return !phone || re.test(phone);
-  };
-
-  const validateForm = () => {
-    const newErrors = {};
-
-    // Email is required and must be valid
-    if (!formData.email) {
-      newErrors.email = "El correo electrónico es requerido";
-    } else if (!validateEmail(formData.email)) {
-      newErrors.email = "El correo electrónico no es válido";
-    }
-
-    // Phone validation (optional but must be valid format if provided)
-    if (formData.telefono && !validatePhone(formData.telefono)) {
-      newErrors.telefono = "El teléfono solo puede contener números";
-    }
-
-    // GDPR consent is required
-    if (!formData.gdprConsent) {
-      newErrors.gdprConsent = "Debes aceptar recibir comunicaciones por email";
-    }
-
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-
-    // Map Mailchimp field names to form state keys
-    const fieldMap = {
-      EMAIL: "email",
-      PAIS: "pais",
-      LNAME: "apellido",
-      FNAME: "nombre",
-      TELEFONO: "telefono",
-      "gdpr[90974]": "gdprConsent",
-    };
-
-    const stateKey = fieldMap[name] || name;
-
-    setFormData((prev) => ({
-      ...prev,
-      [stateKey]: type === "checkbox" ? checked : value,
-    }));
-
-    // Clear error for this field when user starts typing
-    if (errors[stateKey]) {
-      setErrors((prev) => ({ ...prev, [stateKey]: null }));
-    }
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Validate form
-    if (!validateForm()) {
-      return;
-    }
-
-    const formElement = e.currentTarget;
-    formElement.submit();
-  };
-
   return (
     <div id="mc_embed_signup" className="mc">
       <form
-        action="https://naturessunshinelatam.us12.list-manage.com/subscribe/post?u=98c81c00200b439824130a329&id=c0296ad042&f_id=005c6ae9f0"
+        action="https://naturessunshinelatam.us12.list-manage.com/subscribe/post?u=98c81c00200b439824130a329&id=c0296ad042&v_id=7197&f_id=00446ae9f0"
         method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
         className="validate"
         target="_blank"
-        onSubmit={handleSubmit}
-        noValidate
       >
         <div id="mc_embed_signup_scroll">
-          <h2>Suscríbete</h2>
+          <h2>¡Forma parte de la nueva generación de Sunshiners!</h2>
           <div className="indicates-required">
             <span className="asterisk">*</span> indica requerido
           </div>
 
-          {/* Email Field */}
           <div className="mc-field-group">
             <label htmlFor="mce-EMAIL">
               Dirección de correo electrónico{" "}
@@ -112,95 +23,51 @@ export const JoinForm = () => {
             <input
               type="email"
               name="EMAIL"
-              className={`required email ${errors.email ? "error" : ""}`}
+              className="required email"
               id="mce-EMAIL"
-              value={formData.email}
-              onChange={handleChange}
-              aria-invalid={errors.email ? "true" : "false"}
-              aria-describedby={errors.email ? "email-error" : undefined}
-            />
-            {errors.email && (
-              <span id="email-error" className="error-message">
-                {errors.email}
-              </span>
-            )}
-          </div>
-
-          {/* Country Field */}
-          <div className="mc-field-group">
-            <label htmlFor="mce-PAIS">País</label>
-            <select
-              name="PAIS"
-              id="mce-PAIS"
-              value={formData.pais}
-              onChange={handleChange}
-            >
-              <option value=""></option>
-              <option value="Mexico">Mexico</option>
-              <option value="Colombia">Colombia</option>
-              <option value="El Salvador">El Salvador</option>
-              <option value="Honduras">Honduras</option>
-              <option value="Ecuador">Ecuador</option>
-              <option value="Republica Dominicana">Republica Dominicana</option>
-              <option value="Panama">Panama</option>
-              <option value="Guatemala">Guatemala</option>
-            </select>
-          </div>
-
-          {/* Last Name Field */}
-          <div className="mc-field-group">
-            <label htmlFor="mce-LNAME">Apellido</label>
-            <input
-              type="text"
-              name="LNAME"
-              className="text"
-              id="mce-LNAME"
-              value={formData.apellido}
-              onChange={handleChange}
+              required
+              defaultValue=""
             />
           </div>
 
-          {/* First Name Field */}
           <div className="mc-field-group">
-            <label htmlFor="mce-FNAME">Nombre</label>
+            <label htmlFor="mce-FNAME">
+              Nombre <span className="asterisk">*</span>
+            </label>
             <input
               type="text"
               name="FNAME"
-              className="text"
+              className="required text"
               id="mce-FNAME"
-              value={formData.nombre}
-              onChange={handleChange}
+              required
+              defaultValue=""
             />
           </div>
 
-          {/* Phone Field */}
           <div className="mc-field-group">
-            <label htmlFor="mce-TELEFONO">Teléfono</label>
+            <label htmlFor="mce-TELEFONO">
+              Whatsapp <span className="asterisk">*</span>
+            </label>
             <input
-              type="text"
+              type="number"
               name="TELEFONO"
-              className={`text ${errors.telefono ? "error" : ""}`}
+              className="required number"
               id="mce-TELEFONO"
-              value={formData.telefono}
-              onChange={handleChange}
-              aria-invalid={errors.telefono ? "true" : "false"}
-              aria-describedby={errors.telefono ? "phone-error" : undefined}
+              required
+              defaultValue=""
             />
-            {errors.telefono && (
-              <span id="phone-error" className="error-message">
-                {errors.telefono}
-              </span>
-            )}
           </div>
 
-          {/* GDPR Section */}
           <div
             id="mergeRow-gdpr"
             className="mergeRow gdpr-mergeRow content__gdprBlock mc-field-group"
           >
             <div className="content__gdpr">
               <label>Permisos de Marketing</label>
-              <p>Por favor selecciona las formas en que quieras saber más:</p>
+              <p>
+                Por favor selecciona las formas en que quieras saber más de
+                Nature&apos;s Sunshine:
+              </p>
               <fieldset
                 className="mc_fieldset gdprRequired mc-field-group"
                 name="interestgroup_field"
@@ -212,18 +79,14 @@ export const JoinForm = () => {
                     name="gdpr[90974]"
                     className="gdpr"
                     value="Y"
-                    checked={formData.gdprConsent}
-                    onChange={handleChange}
                   />
                   <span>Email</span>
                 </label>
               </fieldset>
-              {errors.gdprConsent && (
-                <span className="error-message">{errors.gdprConsent}</span>
-              )}
               <p className="fine muted">
-                Puedes darte de baja en cualquier momento desde el enlace en el
-                pie de nuestros correos.
+                Puedes darte de baja en cualquier momento dando click en el link
+                que se encuentra en el pie de nuestros emails. Para información
+                sobre nuestra política de privacidad, visite nuestro sitio web.
               </p>
             </div>
 
@@ -235,16 +98,32 @@ export const JoinForm = () => {
                 <a
                   href="https://mailchimp.com/legal/terms"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noopener noreferrer"
                 >
                   Learn more
                 </a>
-                .
+                &nbsp;about Mailchimp&apos;s privacy practices.
               </p>
             </div>
           </div>
 
-          {/* Honeypot */}
+          <div hidden>
+            <input type="hidden" name="tags" value="12681438" />
+          </div>
+
+          <div id="mce-responses" className="clear">
+            <div
+              className="response"
+              id="mce-error-response"
+              style={{ display: "none" }}
+            />
+            <div
+              className="response"
+              id="mce-success-response"
+              style={{ display: "none" }}
+            />
+          </div>
+
           <div
             aria-hidden="true"
             style={{ position: "absolute", left: "-5000px" }}
@@ -257,7 +136,6 @@ export const JoinForm = () => {
             />
           </div>
 
-          {/* Submit Button */}
           <div className="clear">
             <input
               type="submit"

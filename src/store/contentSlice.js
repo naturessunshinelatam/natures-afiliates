@@ -20,6 +20,18 @@ const writeAll = (obj) => {
     }
 };
 
+const isCacheFresh = (entry) =>
+    Boolean(entry?.ts && entry?.data && Date.now() - entry.ts < TTL_MS);
+
+const isCountryEnabled = (data) => Boolean(data?.enable ?? data?.enabled);
+
+const fetchCountryPayload = async ({ code, store }) => {
+    const { data } = await api.get(`/mock/landing/${code}.json`);
+    store[code] = { ts: Date.now(), data };
+    writeAll(store);
+    return data;
+};
+
 export const fetchLandingContent = createAsyncThunk(
     "content/fetchLandingContent",
     async ({ countryCode, force = false }, { rejectWithValue }) => {
@@ -27,26 +39,67 @@ export const fetchLandingContent = createAsyncThunk(
         const store = readAll();
 
         if (!force) {
-            const cached = store?.[cc];
-            if (cached?.ts && cached?.data && Date.now() - cached.ts < TTL_MS) {
-                return { countryCode: cc, data: cached.data, fromCache: true };
+            const cachedCountry = store?.[cc];
+            const cachedLatam = store?.LATAM;
+
+            if (isCacheFresh(cachedCountry)) {
+                const enabled = isCountryEnabled(cachedCountry.data);
+
+                if (enabled || cc === "LATAM") {
+                    return {
+                        countryCode: cc,
+                        sourceCountry: cc,
+                        data: cachedCountry.data,
+                        fromCache: true,
+                    };
+                }
+
+                if (isCacheFresh(cachedLatam)) {
+                    return {
+                        countryCode: cc,
+                        sourceCountry: "LATAM",
+                        data: cachedLatam.data,
+                        fromCache: true,
+                    };
+                }
             }
         }
 
         try {
-            const url = `/mock/landing/${cc}.json`;
+            const countryData = await fetchCountryPayload({ code: cc, store });
+            const enabled = isCountryEnabled(countryData);
 
-            const { data } = await api.get(url);
+            if (enabled || cc === "LATAM") {
+                return {
+                    countryCode: cc,
+                    sourceCountry: cc,
+                    data: countryData,
+                    fromCache: false,
+                };
+            }
 
-            store[cc] = { ts: Date.now(), data };
-            writeAll(store);
+            const cachedLatam = store?.LATAM;
+            if (isCacheFresh(cachedLatam)) {
+                return {
+                    countryCode: cc,
+                    sourceCountry: "LATAM",
+                    data: cachedLatam.data,
+                    fromCache: true,
+                };
+            }
 
-            return { countryCode: cc, data, fromCache: false };
+            const latamData = await fetchCountryPayload({ code: "LATAM", store });
+            return {
+                countryCode: cc,
+                sourceCountry: "LATAM",
+                data: latamData,
+                fromCache: false,
+            };
         } catch (e) {
             console.log(`Error console fetch landing: [${e?.message || "unknown"}]`);
             return rejectWithValue({ countryCode: cc, message: "fetch_failed" });
         }
-    }
+    },
 );
 
 const content = createSlice({
@@ -57,11 +110,8 @@ const content = createSlice({
     reducers: {
         clearCountryContent: (state, action) => {
             const cc = (action.payload || "LATAM").toUpperCase();
-
-            // limpia redux
             delete state.byCountry[cc];
 
-            // limpia sessionStorage
             const store = readAll();
             delete store[cc];
             writeAll(store);
@@ -78,13 +128,18 @@ const content = createSlice({
             state.byCountry[cc] = {
                 status: "ready",
                 data: action.payload.data,
+                sourceCountry: action.payload.sourceCountry,
                 fromCache: action.payload.fromCache,
                 at: Date.now(),
             };
         });
 
         b.addCase(fetchLandingContent.rejected, (state, action) => {
-            const cc = (action.payload?.countryCode || action.meta.arg.countryCode || "LATAM").toUpperCase();
+            const cc = (
+                action.payload?.countryCode ||
+                action.meta.arg.countryCode ||
+                "LATAM"
+            ).toUpperCase();
             state.byCountry[cc] = { ...(state.byCountry[cc] || {}), status: "error" };
         });
     },
