@@ -45,6 +45,10 @@
     }
   ],
   "feature": {
+    "title": "Cómo empezó la Green Revolution",
+    "subTitle": "Hace más de 50 años, Nature’s Sunshine nació con una idea clara:",
+    "descTitle": "llevar bienestar natural a más personas.",
+    "desc": "Hoy esa misión continúa con una nueva generación.",
     "image": "https://www.universidadsunshine.com/api/proxy?path=Hostinger/getImage/0f846c2c-3caf-4e3a-83e5-91cd1b704f62",
     "imageAlt": "Testimonio de distribuidor",
     "videoUrl": "https://www.youtube.com/watch?v=cBVv3Uk2P0U",
@@ -55,11 +59,41 @@
     ],
     "ctaText": "Comienza tu historia"
   },
+  "chloroFeelBanner": {
+    "eyebrow": "Nuestro best seller",
+    "title": "El poder de Chloro-feel",
+    "lead": "Muchos Sunshiners comienzan compartiendo un producto muy especial: Chloro-feel.",
+    "body": "Un concentrado líquido o en polvo para preparar una bebida refrescante sabor menta o lima limón que puede disfrutar toda la familia.",
+    "secondaryBody": "Es práctico, fácil de usar y se ha convertido en uno de los productos favoritos dentro de la comunidad.",
+    "visionLead": "Desde el inicio, nuestro fundador soñó con algo muy simple:",
+    "mission": "llevar bienestar natural a cada hogar.",
+    "communityLine": "Hoy miles de personas están compartiendo Chloro-feel como parte de su rutina diaria.",
+    "opportunityLine": "Y muchas también están descubriendo que compartirlo puede convertirse en una oportunidad.",
+    "ctaText": "¡Únete a nuestra causa!",
+    "backgroundImage": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/2599ce94-9fe3-4dc8-abf2-86bdf6dc8455_chloro-feel.png"
+  },
   "catalog": {
-    "title": "Guía de patrocinio",
-    "text": "Material completo de apoyo para presentar la marca y las líneas de productos principales.",
+    "title": "¿Qué significa ser Sunshiner?",
+    "lead": "Ser Sunshiner es formar parte de una comunidad que cree en:",
+    "beliefs": [
+      "bienestar natural",
+      "crecimiento personal",
+      "comunidad",
+      "impacto positivo"
+    ],
+    "opportunityLead": "Pero también significa tener una oportunidad para construir algo propio.",
+    "opportunityTitle": "Como Sunshiner puedes:",
+    "opportunities": [
+      "Comprar productos con 45% de descuento",
+      "Generar ganancia por venta directa",
+      "Crear y desarrollar tu propio equipo de Sunshiners",
+      "Construir un negocio presente en 8 países de LATAM",
+      "Viajar por el mundo en Convenciones Internacionales"
+    ],
+    "closing": "Todo empieza con algo muy simple: compartir bienestar.",
+    "ctaText": "Afíliate a la Green Revolution",
     "pdfUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
-    "panelImg": "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=1200&q=80"
+    "panelImg": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/35ed6bf1-c284-4213-8c90-8636f04594ed_Sunshiner.png"
   },
   "testimonialsTitle": "Testimonios",
   "testimonialsSubtitle": "Historias reales de distribuidores que transformaron su vida con Natures.",
@@ -126,6 +160,39 @@
       "submittedAt": "2026-03-02T10:00:00Z"
     }
   ],
+  "steps": {
+    "title": "¿Cómo ganar con la Green Revolution?",
+    "subtitle": "Empezar es más fácil de lo que imaginas.",
+    "description": "Muchos Sunshiners comienzan con un sistema simple que se puede replicar semana a semana.",
+    "cta": "Quiero ganar con Green Revolution",
+    "items": [
+      {
+        "step": 1,
+        "title": "Compra y ahorra",
+        "body": "Compra Chloro-feel o Powdered Chloro-feel con tu descuento de Sunshiner."
+      },
+      {
+        "step": 2,
+        "title": "Comparte y vende",
+        "body": "Compártelo con otras personas y véndelo al precio público sugerido."
+      },
+      {
+        "step": 3,
+        "title": "Aplica la regla de 3",
+        "body": "Cada semana: invita un vaso de Chloro-feel a 3 personas, cuéntales sobre la Green Revolution y acompáñalos para que ellos también comiencen."
+      },
+      {
+        "step": 4,
+        "title": "Construye tu comunidad",
+        "body": "Recibe hasta un 12% de ganancias sobre las compras de tu red en hasta 5 niveles."
+      },
+      {
+        "step": 5,
+        "title": "Bonos y retos",
+        "body": "Aprovecha los bonos y retos para ganar ingresos adicionales. Así es como muchos Sunshiners están construyendo su negocio: compartiendo bienestar, creando comunidad y creciendo juntos."
+      }
+    ]
+  },
   "join": {
     "title": "Únete ahora",
     "subtitle": "Completa el formulario y recibe información completa para comenzar tu negocio.",
@@ -138,9 +205,21 @@
       "catalogUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file",
       "starterGuideUrl": "https://powerhealth.pro/sunshineuniversity/uploads/7536cffc-ade5-4150-b85a-538c075fa268_file"
     },
-    "nextSteps": {
-      "title": "¿Qué sigue?",
-      "description": "Te enviaremos toda la información sobre el plan de compensación y cómo iniciar con tu kit de productos."
+    "community": {
+      "image": "/imgs/join.png",
+      "imageAlt": "Comunidad Green Revolution",
+      "title": "Una comunidad que crece",
+      "lead": "Hoy miles de personas están entrando a la Green Revolution.",
+      "intro": "Personas que:",
+      "highlights": [
+        "comparten hábitos",
+        "inspiran bienestar",
+        "y ayudan a otros a sentirse mejor."
+      ],
+      "story": "Cada Sunshiner tiene una historia diferente.",
+      "common": "Pero todos tienen algo en común:",
+      "closing": "empezaron compartiendo lo que les funcionaba.",
+      "ending": "Y así empezaron a crecer."
     }
   },
   "footer": {

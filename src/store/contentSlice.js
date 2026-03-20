@@ -3,6 +3,7 @@ import { api } from "../lib/api";
 
 const KEY = "landing_content_cache_v1";
 const TTL_MS = 1000 * 60 * 15; // 15 min
+const ENABLED_MOCK_COUNTRIES = new Set(["LATAM", "MX"]);
 
 const readAll = () => {
     try {
@@ -36,7 +37,35 @@ export const fetchLandingContent = createAsyncThunk(
     "content/fetchLandingContent",
     async ({ countryCode, force = false }, { rejectWithValue }) => {
         const cc = (countryCode || "LATAM").toUpperCase();
+        const effectiveCountry = ENABLED_MOCK_COUNTRIES.has(cc) ? cc : "LATAM";
         const store = readAll();
+
+        // If country is not enabled in mock, always resolve to LATAM.
+        if (effectiveCountry !== cc) {
+            if (!force) {
+                const cachedLatam = store?.LATAM;
+                if (isCacheFresh(cachedLatam)) {
+                    return {
+                        countryCode: cc,
+                        sourceCountry: "LATAM",
+                        data: cachedLatam.data,
+                        fromCache: true,
+                    };
+                }
+            }
+
+            try {
+                const latamData = await fetchCountryPayload({ code: "LATAM", store });
+                return {
+                    countryCode: cc,
+                    sourceCountry: "LATAM",
+                    data: latamData,
+                    fromCache: false,
+                };
+            } catch (e) {
+                return rejectWithValue({ countryCode: cc, message: "fetch_failed" });
+            }
+        }
 
         if (!force) {
             const cachedCountry = store?.[cc];

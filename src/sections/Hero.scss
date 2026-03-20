@@ -87,6 +87,52 @@
     @media (max-width: #{$breakpoint-tablet - 1px}) {
       height: 44vh;
     }
+
+    // Extra dark veil for legible overlay text
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      pointer-events: none;
+      background: linear-gradient(
+        110deg,
+        rgba(4, 12, 18, 0.62) 0%,
+        rgba(4, 12, 18, 0.46) 48%,
+        rgba(4, 12, 18, 0.26) 100%
+      );
+    }
+  }
+
+  &__visualText {
+    position: absolute;
+    z-index: 3;
+    left: clamp(16px, 3vw, 34px);
+    bottom: clamp(16px, 4vh, 34px);
+    width: min(82%, 420px);
+    padding: 0;
+  }
+
+  &__visualLead {
+    margin: 0 0 10px;
+    font-weight: 700;
+    line-height: 1.35;
+    color: rgba(255, 255, 255, 0.96);
+    text-shadow: 0 6px 24px rgba(0, 0, 0, 0.7);
+  }
+
+  &__visualList {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+
+    li {
+      color: rgba(255, 255, 255, 0.92);
+      line-height: 1.35;
+      text-shadow: 0 6px 24px rgba(0, 0, 0, 0.72);
+    }
   }
 
   &__img {

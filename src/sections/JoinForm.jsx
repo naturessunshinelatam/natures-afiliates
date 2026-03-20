@@ -16,21 +16,6 @@ export const JoinForm = () => {
           </div>
 
           <div className="mc-field-group">
-            <label htmlFor="mce-EMAIL">
-              Dirección de correo electrónico{" "}
-              <span className="asterisk">*</span>
-            </label>
-            <input
-              type="email"
-              name="EMAIL"
-              className="required email"
-              id="mce-EMAIL"
-              required
-              defaultValue=""
-            />
-          </div>
-
-          <div className="mc-field-group">
             <label htmlFor="mce-FNAME">
               Nombre <span className="asterisk">*</span>
             </label>
@@ -45,11 +30,25 @@ export const JoinForm = () => {
           </div>
 
           <div className="mc-field-group">
-            <label htmlFor="mce-TELEFONO">
-              Whatsapp <span className="asterisk">*</span>
+            <label htmlFor="mce-EMAIL">
+              Correo electrónico <span className="asterisk">*</span>
             </label>
             <input
-              type="number"
+              type="email"
+              name="EMAIL"
+              className="required email"
+              id="mce-EMAIL"
+              required
+              defaultValue=""
+            />
+          </div>
+
+          <div className="mc-field-group">
+            <label htmlFor="mce-TELEFONO">
+              Teléfono <span className="asterisk">*</span>
+            </label>
+            <input
+              type="tel"
               name="TELEFONO"
               className="required number"
               id="mce-TELEFONO"
@@ -142,7 +141,7 @@ export const JoinForm = () => {
               name="subscribe"
               id="mc-embedded-subscribe"
               className="button"
-              value="Afiliarme"
+              value="¡Únete a la Green Revolution!"
             />
           </div>
         </div>

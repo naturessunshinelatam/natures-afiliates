@@ -3,7 +3,9 @@ import { Hero } from "../sections/Hero";
 import { Supplements } from "../sections/Supplements";
 import { Catalog } from "../sections/Catalog";
 import { FeatureSection } from "../sections/FeatureSection";
+import { ChloroFeelBanner } from "../sections/ChloroFeelBanner";
 import { Testimonials } from "../sections/Testimonials";
+import { Steps } from "../sections/Steps";
 import { Join } from "../sections/Join";
 import { Footer } from "../sections/Footer";
 import { Navbar } from "../ui/Navbar";
@@ -26,9 +28,9 @@ export const Landing = () => {
         <section id="hero">
           <Hero />
         </section>
-        <section id="supplements">
+        {/* <section id="supplements">
           <Supplements />
-        </section>
+        </section> */}
         <section id="sponsorship">
           <Catalog />
         </section>
@@ -41,9 +43,19 @@ export const Landing = () => {
             />
           </section>
         )}
-        <section id="testimonials">
+        {content?.chloroFeelBanner && (
+          <section id="chloro-feel">
+            <ChloroFeelBanner />
+          </section>
+        )}
+        {content?.steps && (
+          <section id="steps">
+            <Steps />
+          </section>
+        )}
+        {/* <section id="testimonials">
           <Testimonials />
-        </section>
+        </section> */}
         <section id="join">
           <Join />
         </section>

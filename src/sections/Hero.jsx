@@ -1,13 +1,22 @@
 ﻿import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useActiveContent } from "../lib/useActiveContent";
 import { WhatsAppButton } from "../ui/WhatsAppButton";
 import "./Hero.scss";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Hero = () => {
   const content = useActiveContent();
   const root = useRef(null);
   const titleRef = useRef(null);
+  const rightHighlights = [
+    "sentirse mejor",
+    "tener mas energia",
+    "crear habitos saludables",
+    "y compartir bienestar con otros.",
+  ];
 
   // Entrance fade-in
   useEffect(() => {
@@ -19,6 +28,63 @@ export const Hero = () => {
         { opacity: 1, y: 0, stagger: 0.1, duration: 0.65, ease: "power2.out" },
       );
     }, root);
+    return () => ctx.revert();
+  }, [content]);
+
+  // Right-side highlights: one-by-one alternating side entrance
+  useEffect(() => {
+    if (!content || !root.current) return;
+    const ctx = gsap.context(() => {
+      const items = gsap.utils.toArray(".hero__visualItem");
+      const triggerEl = root.current?.querySelector(".hero__visualText");
+      if (!items.length) return;
+      if (!triggerEl) return;
+
+      const setSeparated = () => {
+        gsap.set(items, {
+          opacity: 0,
+          x: (i) => (i % 2 === 0 ? -42 : 42),
+          filter: "blur(6px)",
+        });
+      };
+
+      const animateIn = () => {
+        gsap.to(items, {
+          opacity: 1,
+          x: 0,
+          filter: "blur(0px)",
+          duration: 0.62,
+          ease: "power2.out",
+          stagger: 0.14,
+          overwrite: "auto",
+        });
+      };
+
+      const animateOut = () => {
+        gsap.to(items, {
+          opacity: 0,
+          x: (i) => (i % 2 === 0 ? -42 : 42),
+          filter: "blur(6px)",
+          duration: 0.42,
+          ease: "power2.in",
+          stagger: 0.06,
+          overwrite: "auto",
+        });
+      };
+
+      setSeparated();
+
+      ScrollTrigger.create({
+        trigger: triggerEl,
+        start: "top 60%",
+        end: "bottom 10%",
+        onEnter: animateOut,
+        onLeave: animateIn,
+        onEnterBack: animateOut,
+        onLeaveBack: animateIn,
+      });
+    }, root);
+
     return () => ctx.revert();
   }, [content]);
 
@@ -62,6 +128,18 @@ export const Hero = () => {
         {/* Right — image + diagonal overlay */}
         <div className="hero__visual">
           <div className="hero__diag" aria-hidden="true" />
+          <div className="hero__visualText">
+            <p className="hero__visualLead">
+              Cada vez mas personas estan buscando:
+            </p>
+            <ul className="hero__visualList">
+              {rightHighlights.map((item) => (
+                <li key={item} className="hero__visualItem">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
           <img
             className="hero__img"
             src={content.hero.image}
