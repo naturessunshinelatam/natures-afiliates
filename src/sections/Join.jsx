@@ -1,5 +1,6 @@
 import { useActiveContent } from "../lib/useActiveContent";
 import { JoinForm } from "./JoinForm";
+import { WhatsAppButton } from "../ui/WhatsAppButton";
 import "./Join.scss";
 
 export const Join = () => {
@@ -27,19 +28,50 @@ export const Join = () => {
             <p className="muted">{join.contact.email}</p>
             <p className="muted">WhatsApp: {join.contact.whatsapp}</p>
             <p className="muted">{join.contact.schedule}</p>
+            <WhatsAppButton
+              phone={join.contact.whatsapp}
+              label="Hablar por WhatsApp"
+              className="join__wa"
+            />
           </div>
-          <div className="sideCard sideCard--grad">
-            <h3>{join.nextSteps.title}</h3>
-            <p className="muted">{join.nextSteps.description}</p>
-            <a
-              className="btn btn--ghost"
-              href={join.downloads.catalogUrl}
-              download
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Descargar catálogo
-            </a>
+          <div className="sideCard sideCard--grad join__community">
+            <img
+              className="join__community-image"
+              src={join.community?.image || "/imgs/join.png"}
+              alt={join.community?.imageAlt || "Comunidad Sunshiner"}
+              loading="lazy"
+            />
+            {/* <h3>{join.community?.title || "Una comunidad que crece"}</h3> */}
+            {/* <p className="muted">
+              {join.community?.lead ||
+                "Hoy miles de personas estan entrando a la Green Revolution."}
+            </p> */}
+            <p className="muted">{join.community?.intro || "Personas que:"}</p>
+            <ul className="join__community-list muted">
+              {(
+                join.community?.highlights || [
+                  "comparten habitos",
+                  "inspiran bienestar",
+                  "y ayudan a otros a sentirse mejor.",
+                ]
+              ).map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className="muted">
+              {join.community?.story ||
+                "Cada Sunshiner tiene una historia diferente."}
+            </p>
+            <p className="muted">
+              {join.community?.common || "Pero todos tienen algo en comun:"}
+            </p>
+            <p className="muted">
+              {join.community?.closing ||
+                "empezaron compartiendo lo que les funcionaba."}
+            </p>
+            <p className="muted">
+              {join.community?.ending || "Y asi empezaron a crecer."}
+            </p>
           </div>
         </aside>
       </div>
