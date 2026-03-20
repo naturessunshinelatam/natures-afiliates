@@ -17,6 +17,31 @@
     background: rgba(255, 255, 255, 0.03);
     padding: 14px;
   }
+
+  &__wa {
+    margin-top: 10px;
+  }
+
+  &__community {
+    display: grid;
+    gap: 8px;
+  }
+
+  &__community-image {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 1px solid $line;
+    margin-bottom: 6px;
+  }
+
+  &__community-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 4px;
+  }
 }
 
 .sideCard {
@@ -25,14 +50,7 @@
   background: rgba(255, 255, 255, 0.03);
   padding: 14px;
 
-  &--grad {
-    background: linear-gradient(
-      135deg,
-      rgba(45, 212, 191, 0.14),
-      rgba(56, 189, 248, 0.12)
-    );
   }
-}
 
 // ===== Mailchimp Form Overrides =====
 #mc_embed_signup.mc {

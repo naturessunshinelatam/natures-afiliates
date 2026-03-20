@@ -55,10 +55,12 @@ const getYouTubeEmbedUrl = (url) => {
   };
 };
 
-export const VideoPopup = ({ videoUrl, triggerElement = null }) => {
+export const VideoPopup = ({ videoUrl, triggerElement = null, isShort }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
-  const embedData = getYouTubeEmbedUrl(videoUrl);
+  const rawEmbed = getYouTubeEmbedUrl(videoUrl);
+  // Allow caller to override short detection (e.g. for local vertical MP4)
+  const embedData = isShort !== undefined ? { ...rawEmbed, isShort } : rawEmbed;
 
   const handleBackdropClick = (e) => {
     // Solo cerrar si se hace clic directamente en el backdrop, no en el contenido

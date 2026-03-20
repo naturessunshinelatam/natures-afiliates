@@ -10,11 +10,13 @@ import "./Navbar.scss";
 
 const links = [
   { id: "hero", label: "Inicio" },
-  { id: "supplements", label: "Suplementos" },
-  { id: "sponsorship", label: "Guía de patrocinio" },
-  { id: "feature", label: "Beneficios" },
-  { id: "testimonials", label: "Testimonios" },
-  { id: "join", label: "Afíliate" },
+  // { id: "supplements", label: "Suplementos" },
+  { id: "sponsorship", label: "¿Qué significa ser Sunshiner?" },
+  { id: "feature", label: "Historia" },
+  { id: "chloro-feel", label: "Chloro-feel" },
+  { id: "steps", label: "Cómo ganar" },
+  // { id: "testimonials", label: "Testimonios" },
+  { id: "join", label: "Ser un sunshiner" },
 ];
 
 const countries = [
@@ -92,7 +94,7 @@ export const Navbar = () => {
           tabIndex={0}
         >
           <NSPLogo className="nav__brandLogo" color="var(--a)" />
-          <span className="nav__brandText">Natures-afiliates</span>
+          <span className="nav__brandText">Green-Revolution</span>
         </div>
 
         <button

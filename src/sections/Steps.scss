@@ -1,0 +1,142 @@
+@use '../styles/variables' as *;
+
+.steps {
+  padding: 80px 0 60px;
+  background: $bg;
+  overflow: hidden;
+
+  &__header {
+    max-width: 640px;
+    margin: 0 auto 3rem;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+    font-weight: 700;
+    color: $a;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  &__subtitle {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: $text;
+    margin-bottom: 0.5rem;
+  }
+
+  &__description {
+    font-size: 0.95rem;
+    color: $muted;
+    line-height: 1.6;
+  }
+
+  &__overflow {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  &__track {
+    overflow-x: auto;
+    cursor: grab;
+    user-select: none;
+    padding-bottom: 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: $a transparent;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: $a;
+      border-radius: 4px;
+    }
+
+    &--grabbing {
+      cursor: grabbing;
+    }
+  }
+
+  &__track-inner {
+    display: flex;
+    gap: 20px;
+    padding: 0.5rem 0 1.5rem;
+
+    // let the flex row be wider than viewport so cards don't wrap
+    width: max-content;
+    max-width: none;
+  }
+
+  &__card {
+    min-width: 260px;
+    max-width: 280px;
+    flex-shrink: 0;
+    background: $card;
+    border: 1px solid $line;
+    border-radius: $r;
+    padding: 1.75rem 1.5rem;
+    scroll-snap-align: start;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+  }
+
+  &__badge {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1;
+    background: linear-gradient(135deg, $a, $b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.75rem;
+  }
+
+  &__card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: $text;
+    margin-bottom: 0.5rem;
+  }
+
+  &__card-body {
+    font-size: 0.875rem;
+    color: $muted;
+    line-height: 1.65;
+  }
+
+  &__footer {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  &__cta {
+    display: inline-block;
+  }
+}
+
+// mobile: allow horizontal scroll from edge to edge
+@media (max-width: $breakpoint-tablet) {
+  .steps {
+    &__track-inner {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    &__card {
+      min-width: 240px;
+    }
+  }
+}

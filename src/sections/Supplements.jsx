@@ -165,6 +165,11 @@ export const Supplements = () => {
           </article>
         ))}
       </div>
+      <div className="hero__cta h__fade">
+        <a className="btn" href="#join">
+          {content.hero.ctaPrimary}
+        </a>
+      </div>
     </div>
   );
 };
