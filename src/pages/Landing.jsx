@@ -8,8 +8,12 @@ import { Testimonials } from "../sections/Testimonials";
 import { Steps } from "../sections/Steps";
 import { Join } from "../sections/Join";
 import { Footer } from "../sections/Footer";
-import { Navbar } from "../ui/Navbar";
 import { useActiveContent } from "../lib/useActiveContent";
+import { NewNavbar } from "../ui/NewNavbar";
+import { Menu } from "../ui/Menu/Menu";
+import { menuDefaults } from "../ui/Menu/MenuDefaults";
+import { NSPLogo } from "../ui/NSPLogo";
+import { Navbar } from "../ui/Navbar";
 
 export const Landing = () => {
   const content = useActiveContent();
@@ -23,7 +27,7 @@ export const Landing = () => {
 
   return (
     <>
-      <Navbar />
+      <NewNavbar />
       <main>
         <section id="hero">
           <Hero />

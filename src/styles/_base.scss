@@ -12,6 +12,12 @@
   --c: #{$c};
   --shadow: #{$shadow};
   --r: #{$r};
+  --bg-dark: #{$bg_dark};
+  --bg-light: #{$bg_light};
+  --btn-color: #{$btn_color};
+  --main_text_dark_bg: #{$main_text_dark_bg};
+  --main_text_light_bg: #{$main_text_light_bg};
+  --navbar-height: #{$navbar};
   --font-primary: #{$font-primary};
   --font-secondary: #{$font-secondary};
 }
@@ -56,4 +62,8 @@ a {
 
 main {
   padding-top: 112px;
+}
+
+section[id] {
+  scroll-margin-top: 130px;
 }
