@@ -4,7 +4,7 @@ import "./NewNavBar.scss";
 
 const links = [
   { id: "hero", label: "Inicio" },
-  { id: "sponsorship", label: "Patrocinio" },
+  { id: "about", label: "¿Qué es?" },
   { id: "feature", label: "Historia" },
   { id: "chloro-feel", label: "Chloro-feel" },
   { id: "steps", label: "Pasos" },

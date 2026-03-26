@@ -3,7 +3,8 @@ import { api } from "../lib/api";
 
 const KEY = "landing_content_cache_v1";
 const TTL_MS = 1000 * 60 * 15; // 15 min
-const ENABLED_MOCK_COUNTRIES = new Set(["LATAM", "MX"]);
+const DEFAULT_COUNTRY = "MX";
+const ENABLED_MOCK_COUNTRIES = new Set([DEFAULT_COUNTRY]);
 
 const readAll = () => {
     try {
@@ -36,30 +37,30 @@ const fetchCountryPayload = async ({ code, store }) => {
 export const fetchLandingContent = createAsyncThunk(
     "content/fetchLandingContent",
     async ({ countryCode, force = false }, { rejectWithValue }) => {
-        const cc = (countryCode || "LATAM").toUpperCase();
-        const effectiveCountry = ENABLED_MOCK_COUNTRIES.has(cc) ? cc : "LATAM";
+        const cc = (countryCode || DEFAULT_COUNTRY).toUpperCase();
+        const effectiveCountry = ENABLED_MOCK_COUNTRIES.has(cc) ? cc : DEFAULT_COUNTRY;
         const store = readAll();
 
-        // If country is not enabled in mock, always resolve to LATAM.
+        // If country is not enabled in mock, always resolve to MX.
         if (effectiveCountry !== cc) {
             if (!force) {
-                const cachedLatam = store?.LATAM;
-                if (isCacheFresh(cachedLatam)) {
+                const cachedDefault = store?.[DEFAULT_COUNTRY];
+                if (isCacheFresh(cachedDefault)) {
                     return {
                         countryCode: cc,
-                        sourceCountry: "LATAM",
-                        data: cachedLatam.data,
+                        sourceCountry: DEFAULT_COUNTRY,
+                        data: cachedDefault.data,
                         fromCache: true,
                     };
                 }
             }
 
             try {
-                const latamData = await fetchCountryPayload({ code: "LATAM", store });
+                const defaultData = await fetchCountryPayload({ code: DEFAULT_COUNTRY, store });
                 return {
                     countryCode: cc,
-                    sourceCountry: "LATAM",
-                    data: latamData,
+                    sourceCountry: DEFAULT_COUNTRY,
+                    data: defaultData,
                     fromCache: false,
                 };
             } catch (e) {
@@ -69,12 +70,12 @@ export const fetchLandingContent = createAsyncThunk(
 
         if (!force) {
             const cachedCountry = store?.[cc];
-            const cachedLatam = store?.LATAM;
+            const cachedDefault = store?.[DEFAULT_COUNTRY];
 
             if (isCacheFresh(cachedCountry)) {
                 const enabled = isCountryEnabled(cachedCountry.data);
 
-                if (enabled || cc === "LATAM") {
+                if (enabled || cc === DEFAULT_COUNTRY) {
                     return {
                         countryCode: cc,
                         sourceCountry: cc,
@@ -83,11 +84,11 @@ export const fetchLandingContent = createAsyncThunk(
                     };
                 }
 
-                if (isCacheFresh(cachedLatam)) {
+                if (isCacheFresh(cachedDefault)) {
                     return {
                         countryCode: cc,
-                        sourceCountry: "LATAM",
-                        data: cachedLatam.data,
+                        sourceCountry: DEFAULT_COUNTRY,
+                        data: cachedDefault.data,
                         fromCache: true,
                     };
                 }
@@ -98,7 +99,7 @@ export const fetchLandingContent = createAsyncThunk(
             const countryData = await fetchCountryPayload({ code: cc, store });
             const enabled = isCountryEnabled(countryData);
 
-            if (enabled || cc === "LATAM") {
+            if (enabled || cc === DEFAULT_COUNTRY) {
                 return {
                     countryCode: cc,
                     sourceCountry: cc,
@@ -107,21 +108,21 @@ export const fetchLandingContent = createAsyncThunk(
                 };
             }
 
-            const cachedLatam = store?.LATAM;
-            if (isCacheFresh(cachedLatam)) {
+            const cachedDefault = store?.[DEFAULT_COUNTRY];
+            if (isCacheFresh(cachedDefault)) {
                 return {
                     countryCode: cc,
-                    sourceCountry: "LATAM",
-                    data: cachedLatam.data,
+                    sourceCountry: DEFAULT_COUNTRY,
+                    data: cachedDefault.data,
                     fromCache: true,
                 };
             }
 
-            const latamData = await fetchCountryPayload({ code: "LATAM", store });
+            const defaultData = await fetchCountryPayload({ code: DEFAULT_COUNTRY, store });
             return {
                 countryCode: cc,
-                sourceCountry: "LATAM",
-                data: latamData,
+                sourceCountry: DEFAULT_COUNTRY,
+                data: defaultData,
                 fromCache: false,
             };
         } catch (e) {
@@ -138,7 +139,7 @@ const content = createSlice({
     },
     reducers: {
         clearCountryContent: (state, action) => {
-            const cc = (action.payload || "LATAM").toUpperCase();
+            const cc = (action.payload || DEFAULT_COUNTRY).toUpperCase();
             delete state.byCountry[cc];
 
             const store = readAll();
@@ -148,7 +149,7 @@ const content = createSlice({
     },
     extraReducers: (b) => {
         b.addCase(fetchLandingContent.pending, (state, action) => {
-            const cc = (action.meta.arg.countryCode || "LATAM").toUpperCase();
+            const cc = (action.meta.arg.countryCode || DEFAULT_COUNTRY).toUpperCase();
             state.byCountry[cc] = { ...(state.byCountry[cc] || {}), status: "loading" };
         });
 
@@ -167,7 +168,7 @@ const content = createSlice({
             const cc = (
                 action.payload?.countryCode ||
                 action.meta.arg.countryCode ||
-                "LATAM"
+                DEFAULT_COUNTRY
             ).toUpperCase();
             state.byCountry[cc] = { ...(state.byCountry[cc] || {}), status: "error" };
         });

@@ -2,6 +2,7 @@ import React from "react";
 import { Hero } from "../sections/Hero";
 import { Supplements } from "../sections/Supplements";
 import { Catalog } from "../sections/Catalog";
+import { Sponsorship } from "../sections/Sponsorship";
 import { FeatureSection } from "../sections/FeatureSection";
 import { ChloroFeelBanner } from "../sections/ChloroFeelBanner";
 import { Testimonials } from "../sections/Testimonials";
@@ -32,12 +33,10 @@ export const Landing = () => {
         <section id="hero">
           <Hero />
         </section>
-        {/* <section id="supplements">
-          <Supplements />
-        </section> */}
-        <section id="sponsorship">
-          <Catalog />
+        <section id="about">
+          <Sponsorship />
         </section>
+
         {content?.feature && (
           <section id="feature">
             <FeatureSection

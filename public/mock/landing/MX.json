@@ -91,6 +91,25 @@
     "ctaText": "¡Únete a nuestra causa!",
     "backgroundImage": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/2599ce94-9fe3-4dc8-abf2-86bdf6dc8455_chloro-feel.png"
   },
+  "sponsorship": {
+    "title": "Ser Sunshiner es...",
+    "description": "formar parte de una comunidad que cree en: \"bienestar natural\", \"crecimiento personal\", \"comunidad\", y \"impacto positivo\".\n Pero también significa tener una oportunidad para construir algo propio.",
+    "statements": [
+      "Comprar productos con 45% de descuento",
+      "Generar ganancia por venta directa",
+      "Crear y desarrollar tu propio equipo de Sunshiners",
+      "Construir un negocio presente en 8 países de LATAM",
+      "Viajar por el mundo en Convenciones Internacionales"
+    ],
+    "photos": [
+      "https://powerhealth.pro/stage-emprendeconsunshine/uploads/35ed6bf1-c284-4213-8c90-8636f04594ed_Sunshiner.png",
+      "https://powerhealth.pro/stage-emprendeconsunshine/uploads/4b22a155-bc9d-4d96-b0a9-367df1013ebf_GreenRevo.png",
+      "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file",
+      "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=384,height=auto,format=webp,quality=75,fit=contain/contentassets/5bc9c75e5d7a4483acf0a989bdf57190/share-02-2.png",
+      "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=1350,height=auto,format=webp,quality=75,fit=contain/contentassets/f678c59e5ad947389f4b00176de9954c/justaddearth_0326_1.webp",
+      "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=1350,height=auto,format=webp,quality=75,fit=contain/contentassets/e067ff6132f24a12aba8030030822519/st-trail5050.webp"
+    ]
+  },
   "catalog": {
     "title": "¿Qué significa ser Sunshiner?",
     "lead": "Ser Sunshiner es formar parte de una comunidad que cree en:",

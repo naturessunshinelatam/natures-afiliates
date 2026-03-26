@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { api } from "../lib/api";
 
 const KEY = "geo_cache_v1";
 const TTL_MS = 1000 * 60 * 60 * 6; // 6hrs
+const FORCED_COUNTRY = "MX";
 
-const allowed = ["MX", "CO", "EC", "GT", "PA", "SV", "HN", "DO"];
-const norm = (c) => (c || "LATAM").toUpperCase();
-const clamp = (c) => (allowed.includes(norm(c)) ? norm(c) : "LATAM");
+const allowed = [FORCED_COUNTRY];
+const norm = (c) => (c || FORCED_COUNTRY).toUpperCase();
+const clamp = (c) => (allowed.includes(norm(c)) ? norm(c) : FORCED_COUNTRY);
 
 const readCache = () => {
     try {
@@ -30,19 +30,6 @@ const writeCache = (value) => {
     }
 };
 
-// Fallback to cache if fetch fails, so we have something to work with even if it's stale
-
-const fetchCountryFromCloudflareTrace = async () => {
-    const { data } = await api.get("https://www.cloudflare.com/cdn-cgi/trace", {
-        responseType: "text",
-    });
-    const locline = String(data)
-        .split("\n")
-        .find((l) => l.startsWith("loc="));
-    const code = locline?.split("=")?.[1]?.trim();
-    return code ? code.toUpperCase() : null;
-};
-
 export const fetchGeo = createAsyncThunk("geo/fetch", async (arg, { rejectWithValue }) => {
     const force = !!arg.force;
 
@@ -53,37 +40,18 @@ export const fetchGeo = createAsyncThunk("geo/fetch", async (arg, { rejectWithVa
         if (cached) return cached;
     }
     try {
-        const url = import.meta.env.VITE_GEO_IPAPI_URL || "https://ipapi.co/json";
-        // console.log("URL de geolocalización:", url);
-        const { data } = await api.get(url);
-        // console.log("Respuesta:", data);
-        const detectedCountryCode = clamp(data.country_code);
+        const detectedCountryCode = clamp(FORCED_COUNTRY);
         const value = {
             detectedCountryCode,
             countryCode: detectedCountryCode,
-            countryName: data.country_name || detectedCountryCode,
-            source: "ipapi",
+            countryName: "Mexico",
+            source: "forced-mx",
             manual: false,
         };
         writeCache(value);
         return value;
     } catch (err) {
-        // If the main fetch fails, try the Cloudflare trace as a fallback
-        try {
-            const cf = clamp(await fetchCountryFromCloudflareTrace());
-            const value = {
-                detectedCountryCode: cf,
-                countryCode: cf,
-                countryName: cf,
-                source: cf !== "LATAM" ? "cloudflare" : "fallback",
-                manual: false,
-            };
-            writeCache(value);
-            return value;
-
-        } catch (err) {
-            return rejectWithValue("geo_failed");
-        }
+        return rejectWithValue("geo_failed");
     }
 });
 
@@ -111,8 +79,8 @@ const getInitialState = () => {
     }
     return {
         status: "idle",
-        countryCode: "LATAM",
-        countryName: "LATAM",
+        countryCode: FORCED_COUNTRY,
+        countryName: "Mexico",
         source: "init",
         manual: false,
     };
@@ -160,9 +128,9 @@ const geo = createSlice({
         });
         b.addCase(fetchGeo.rejected, (s) => {
             s.status = "error";
-            s.detectedCountryCode = "LATAM";
-            s.countryCode = "LATAM";
-            s.countryName = "LATAM";
+            s.detectedCountryCode = FORCED_COUNTRY;
+            s.countryCode = FORCED_COUNTRY;
+            s.countryName = "Mexico";
             s.source = "error";
             s.manual = false;
         });
