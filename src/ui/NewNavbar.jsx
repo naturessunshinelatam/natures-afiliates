@@ -78,7 +78,7 @@ export const NewNavbar = () => {
             className="new-nav__brandLogo"
             color="var(--main_text_light_bg)"
           />
-          <span className="new-nav__brandText">Natures Affiliates</span>
+          <span className="new-nav__brandText">Natures Sunshine</span>
         </button>
 
         <button

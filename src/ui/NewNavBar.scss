@@ -11,8 +11,8 @@
 
   &--scrolled {
     backdrop-filter: blur(9px);
-    background: rgba($bg_dark, 0.1);
-    border-bottom-color: rgba($main_text_light_bg, 0.2);
+    background: rgba($bg_dark, 0.3);
+    border-bottom-color: rgba($main_text_light_bg, 0.4);
   }
 
   &__inner {
@@ -27,7 +27,7 @@
     gap: 16px;
     // border: 1px solid rgba($main_text_light_bg, 0.24);
     border: none;
-    background: rgba($bg_dark, 0.2);
+    background: rgba($bg_dark, 0.4);
     backdrop-filter: blur(6px);
   }
 
@@ -57,16 +57,22 @@
 
   &__links {
     display: none;
+    color: rgba($main_text_light_bg, 0.95);
+    font-weight: 600;
+    text-shadow: 0px 18px 60px rgba(0,0,0, 0.6);
+    letter-spacing: 0.1px;
   }
 
   &__link,
   &__phone,
   &__menuToggle,
   &__mobileLink {
-    font-family: var(--font-secondary);
+    font-family: var(--font--primary);
     border: 0;
+    font-size: 1rem;
+    
     background: transparent;
-    color: $main_text_light_bg;
+    color: rgba($main_text_light_bg, 0.95);
     cursor: pointer;
   }
 
