@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-spring/web": "^10.0.3",
     "@reduxjs/toolkit": "^2.11.2",
     "axios": "^1.13.5",
     "gsap": "^3.14.2",
@@ -30,5 +31,6 @@
     "globals": "^16.5.0",
     "sass": "^1.97.3",
     "vite": "^7.3.1"
-  }
+  },
+  "packageManager": "yarn@4.7.0+sha512.5a0afa1d4c1d844b3447ee3319633797bcd6385d9a44be07993ae52ff4facabccafb4af5dcd1c2f9a94ac113e5e9ff56f6130431905884414229e284e37bb7c9"
 }

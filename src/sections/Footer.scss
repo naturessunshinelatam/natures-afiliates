@@ -1,117 +1,244 @@
-@use '../styles/variables' as *;
+@use "../styles/variables" as *;
 
 // ===== Footer Component =====
 .footer {
-  border-top: 1px solid $line;
-  padding: 34px 0 18px;
-  background: rgba(0, 0, 0, 0.14);
+  margin-top: clamp(28px, 5vw, 52px);
+  border-top: 1px solid rgba($main_text_dark_bg, 0.15);
+  border-radius: 22px 22px 0 0;
+  overflow: hidden;
+  background: $bg_light;
+
+  &__main {
+    position: relative;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba($bg_light, 0.93) 0%,
+      rgba($bg_light, 0.86) 38%,
+      rgba($bg_light, 0.7) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
 
   &__grid {
+    position: relative;
+    z-index: 1;
     display: grid;
-    gap: 24px;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+    gap: clamp(24px, 4vw, 44px);
+    padding-top: clamp(42px, 6vw, 72px);
+    padding-bottom: clamp(42px, 6vw, 72px);
 
     @media (min-width: $breakpoint-tablet) {
-      grid-template-columns: 1fr 1fr 1fr;
-      align-items: start;
-      gap: 40px;
+      grid-template-columns: minmax(280px, 420px) 1fr;
+      align-items: center;
     }
   }
 
-  &__section {
-    &--center {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+  &__title {
+    margin: 0 0 14px;
+    color: $main_text_dark_bg;
+    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    line-height: 1.1;
+  }
 
-      h4 {
-        text-align: center;
+  &__contactList {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 10px;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      color: rgba($main_text_dark_bg, 0.82);
+      line-height: 1.45;
+
+      svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+        color: rgba($main_text_dark_bg, 0.74);
       }
     }
   }
 
-  &__brand {
-    font-weight: 900;
-    font-size: 1.2rem;
+  &__address-link {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba($main_text_dark_bg, 0.35);
+    transition:
+      color 0.2s,
+      text-decoration-color 0.2s;
+
+    &:hover {
+      color: $main_text_dark_bg;
+      text-decoration-color: $main_text_dark_bg;
+    }
   }
 
   &__links {
     display: flex;
-    flex-direction: row;
     gap: 12px;
-    margin-top: 8px;
+    margin-top: 18px;
   }
 
   &__social-link {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.05);
-    color: $text;
-    transition: background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+    border: 1px solid rgba($main_text_dark_bg, 0.2);
+    color: $main_text_dark_bg;
+    background: rgba($main_text_light_bg, 0.7);
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      color 0.2s ease;
 
     &:hover {
-      background: linear-gradient(135deg, $a, $b);
-      color: #052027;
       transform: translateY(-2px);
+      background: $btn_color;
+      color: $main_text_dark_bg;
     }
+  }
+
+  &__mapWrap {
+    min-height: clamp(250px, 38vw, 380px);
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba($main_text_dark_bg, 0.16);
+    background: rgba($main_text_light_bg, 0.92);
+    box-shadow: 0 16px 30px rgba(36, 57, 28, 0.12);
+  }
+
+  &__map {
+    width: 100%;
+    height: 100%;
+    min-height: clamp(250px, 38vw, 380px);
+    border: 0;
+    display: block;
+  }
+
+  &__bottom {
+    background: color-mix(in srgb, $main_text_dark_bg 78%, black 22%);
+    border-top: 1px solid rgba($main_text_light_bg, 0.14);
+  }
+
+  &__bottomInner {
+    display: grid;
+    gap: 18px;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+
+    @media (min-width: $breakpoint-tablet) {
+      grid-template-columns: minmax(180px, 1fr) 2fr minmax(180px, 1fr);
+      gap: 20px;
+    }
+  }
+
+  &__brand {
+    color: $main_text_light_bg;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  &__tagline {
+    margin: 3px 0 0;
+    color: rgba($main_text_light_bg, 0.72);
+    font-size: 0.9rem;
   }
 
   &__certs {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    gap: 16px;
-    margin-top: 8px;
+    justify-content: center;
+    gap: 10px;
   }
 
   &__cert-link,
   &__cert-item {
-    display: inline-block;
-    padding: 8px;
-    background: rgba(255, 255, 255, 0.92);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 10px;
     border-radius: 8px;
-    transition: opacity 0.25s ease, transform 0.25s ease;
-  }
+    border: 1px solid rgba($main_text_light_bg, 0.22);
+    background: rgba($main_text_light_bg, 0.96);
+    transition: transform 0.2s ease;
 
-  &__cert-link:hover {
-    opacity: 1;
-    transform: translateY(-2px);
+    &:hover {
+      transform: translateY(-1px);
+    }
   }
 
   &__cert-img {
-    height: 32px;
     width: auto;
+    height: 28px;
     object-fit: contain;
-    opacity: 0.9;
-    transition: opacity 0.25s ease, transform 0.25s ease;
 
     @media (min-width: $breakpoint-tablet) {
-      height: 40px;
-    }
-
-    &:hover {
-      opacity: 1;
-      transform: scale(1.05);
+      height: 34px;
     }
   }
 
-  &__list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  &__meta {
+    display: grid;
+    justify-items: start;
+    gap: 4px;
+    color: rgba($main_text_light_bg, 0.76);
+    font-size: 0.86rem;
+    line-height: 1.3;
+
+    @media (min-width: $breakpoint-tablet) {
+      justify-items: end;
+      text-align: right;
+    }
   }
 
-  &__bottom {
-    border-top: 1px solid $line;
-    margin-top: 16px;
-    padding-top: 12px;
-    text-align: center;
+  .fine {
+    color: inherit;
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    border-radius: 18px 18px 0 0;
+
+    &__overlay {
+      background: linear-gradient(
+        180deg,
+        rgba($bg_light, 0.94) 0%,
+        rgba($bg_light, 0.88) 52%,
+        rgba($bg_light, 0.8) 100%
+      );
+    }
+
+    &__mapWrap {
+      order: 2;
+    }
+
+    &__contact {
+      order: 1;
+    }
+
+    &__brandBlock {
+      text-align: center;
+    }
+
+    &__meta {
+      justify-items: center;
+      text-align: center;
+    }
   }
 }

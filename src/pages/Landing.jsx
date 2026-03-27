@@ -1,19 +1,24 @@
-import React from "react";
 import { Hero } from "../sections/Hero";
-import { Supplements } from "../sections/Supplements";
-import { Catalog } from "../sections/Catalog";
+import { Sponsorship } from "../sections/Sponsorship";
 import { FeatureSection } from "../sections/FeatureSection";
 import { ChloroFeelBanner } from "../sections/ChloroFeelBanner";
-import { Testimonials } from "../sections/Testimonials";
 import { Steps } from "../sections/Steps";
 import { Join } from "../sections/Join";
 import { Footer } from "../sections/Footer";
-import { Navbar } from "../ui/Navbar";
 import { useActiveContent } from "../lib/useActiveContent";
+import { NewNavbar } from "../ui/NewNavbar";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 export const Landing = () => {
   const content = useActiveContent();
 
+  gsap.registerPlugin(ScrollTrigger);
+
+  // ScrollTrigger.defaults({
+  //   toggleActions: "play none none reverse",
+  //   markers: true,
+  // });
   const handleJoinClick = () => {
     document.getElementById("join")?.scrollIntoView({
       behavior: "smooth",
@@ -23,17 +28,15 @@ export const Landing = () => {
 
   return (
     <>
-      <Navbar />
+      <NewNavbar />
       <main>
         <section id="hero">
-          <Hero />
+          <Hero onJoinClick={handleJoinClick} />
         </section>
-        {/* <section id="supplements">
-          <Supplements />
-        </section> */}
-        <section id="sponsorship">
-          <Catalog />
+        <section id="about">
+          <Sponsorship />
         </section>
+
         {content?.feature && (
           <section id="feature">
             <FeatureSection
@@ -45,17 +48,15 @@ export const Landing = () => {
         )}
         {content?.chloroFeelBanner && (
           <section id="chloro-feel">
-            <ChloroFeelBanner />
+            <ChloroFeelBanner onJoinClick={handleJoinClick} />
           </section>
         )}
         {content?.steps && (
           <section id="steps">
-            <Steps />
+            <Steps onJoinClick={handleJoinClick} />
           </section>
         )}
-        {/* <section id="testimonials">
-          <Testimonials />
-        </section> */}
+
         <section id="join">
           <Join />
         </section>
