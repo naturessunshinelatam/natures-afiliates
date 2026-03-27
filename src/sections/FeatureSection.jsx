@@ -20,12 +20,8 @@ const getYouTubeThumb = (url) => {
 };
 
 export const FeatureSection = ({ data, onJoinClick }) => {
-  const { displayedLines, currentLineText, isComplete } = useMultiLineTypewriter(
-    data.quotes,
-    70,
-    600,
-    3000
-  );
+  const { displayedLines, currentLineText, isComplete } =
+    useMultiLineTypewriter(data.quotes, 70, 600, 3000);
   const previewImage = data.image || getYouTubeThumb(data.videoUrl);
 
   return (

@@ -1,7 +1,7 @@
 ﻿import { useActiveContent } from "../lib/useActiveContent";
 import "./Hero.scss";
 
-export const Hero = () => {
+export const Hero = ({ onJoinClick }) => {
   const content = useActiveContent();
 
   if (!content?.hero) return null;
@@ -18,9 +18,9 @@ export const Hero = () => {
           <p className="hero__subtitle">{content.hero.subtitle}</p>
 
           <div className="hero__cta">
-            <a className="btn" href="#join">
+            <button className="btn" onClick={onJoinClick}>
               {content.hero.ctaPrimary}
-            </a>
+            </button>
           </div>
         </div>
       </div>

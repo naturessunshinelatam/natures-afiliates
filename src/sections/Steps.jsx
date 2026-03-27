@@ -23,7 +23,7 @@ const iconByTitle = (title, step) => {
   return fallback[(Number(step) - 1) % fallback.length] || Coins;
 };
 
-export const Steps = () => {
+export const Steps = ({ onJoinClick }) => {
   const content = useActiveContent();
   const steps = content?.steps;
 
@@ -58,9 +58,9 @@ export const Steps = () => {
         </div>
 
         <footer className="steps__footer">
-          <a href="#join" className="btn steps__cta">
+          <button className="btn steps__cta" onClick={onJoinClick}>
             {steps.cta}
-          </a>
+          </button>
         </footer>
       </div>
     </section>
