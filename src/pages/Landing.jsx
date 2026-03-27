@@ -15,10 +15,10 @@ export const Landing = () => {
 
   gsap.registerPlugin(ScrollTrigger);
 
-  ScrollTrigger.defaults({
-    toggleActions: "play none none reverse",
-    markers: true,
-  });
+  // ScrollTrigger.defaults({
+  //   toggleActions: "play none none reverse",
+  //   markers: true,
+  // });
   const handleJoinClick = () => {
     document.getElementById("join")?.scrollIntoView({
       behavior: "smooth",

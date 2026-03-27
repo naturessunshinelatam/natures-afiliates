@@ -32,56 +32,7 @@ export const ChloroFeelBanner = ({ onJoinClick }) => {
           },
         },
       );
-      gsap.to(".cfb__bg", {
-        yPercent: 7,
-        scale: 0.9,
-        ease: "none",
-        scrollTrigger: {
-          trigger: root.current,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.6,
-        },
-      });
 
-      gsap.fromTo(
-        ".cfb__mediaImage--product",
-        {
-          yPercent: 22,
-          xPercent: -6,
-          rotate: 6,
-          scale: 0.94,
-          x: -200,
-        },
-        {
-          yPercent: -10,
-          xPercent: 6,
-          rotate: -4,
-          scale: 1.1,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.9,
-          },
-        },
-      );
-      gsap.fromTo(
-        ".cfb__glow",
-        { xPercent: -14, opacity: 0.25 },
-        {
-          xPercent: 14,
-          opacity: 0.55,
-          ease: "none",
-          scrollTrigger: {
-            trigger: root.current,
-            start: "top bottom",
-            end: "bottom top",
-            scrub: 0.7,
-          },
-        },
-      );
       gsap.to(".cfb__panel", {
         y: -8,
         duration: 2.8,
@@ -99,19 +50,16 @@ export const ChloroFeelBanner = ({ onJoinClick }) => {
   return (
     <section className="cfb" ref={root}>
       <div
-        className="cfb__bg"
+        className="cfb__bgSide"
         style={{ backgroundImage: `url(${banner.backgroundImage})` }}
         aria-hidden="true"
       />
       <div className="cfb__overlay" aria-hidden="true" />
-      <div className="cfb__glow" aria-hidden="true" />
       <div className="wrap cfb__wrap">
-        <img
-          src={banner.imgBestSeller}
-          alt=""
-          className="cfb__mediaImage cfb__mediaImage--product"
-        />
-        <article className="cfb__panel">
+        <article
+          className="cfb__panel"
+          style={{ backgroundImage: `url(${banner.imgBestSeller})` }}
+        >
           <p className="cfb__eyebrow cfb__reveal">{banner.eyebrow}</p>
           <h2 className="cfb__title cfb__reveal">{banner.title}</h2>
           <p className="cfb__lead cfb__reveal">{banner.lead}</p>

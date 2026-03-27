@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { NSPLogo } from "./NSPLogo";
+import { useActiveContent } from "../lib/useActiveContent";
 import "./NewNavBar.scss";
 
 const links = [
@@ -12,6 +13,10 @@ const links = [
 ];
 
 export const NewNavbar = () => {
+  const content = useActiveContent();
+  const phone =
+    content?.footer?.contact?.phone || content?.join?.contact?.whatsapp || "";
+
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeId, setActiveId] = useState("hero");
   const [isOpen, setIsOpen] = useState(false);
@@ -113,7 +118,7 @@ export const NewNavbar = () => {
           className="new-nav__phone"
           onClick={() => goToSection("join")}
         >
-          +52 55 0000 0000
+          {phone}
         </button>
       </nav>
 

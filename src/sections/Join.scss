@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use "../styles/variables" as *;
 
 // ===== Join Section =====
 .join {
@@ -78,7 +78,6 @@
       rgba($bg_light, 0.9) 100%
     );
   }
-
 }
 
 // ===== Mailchimp Form Overrides =====
@@ -151,7 +150,9 @@
     padding: 14px 18px !important;
     cursor: pointer !important;
     box-shadow: 0 10px 22px rgba(36, 57, 28, 0.14) !important;
-    transition: transform 0.2s ease, box-shadow 0.2s ease !important;
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease !important;
 
     &:hover:not(:disabled) {
       transform: translateY(-1px);
