@@ -66,7 +66,7 @@
     "title": "Cómo empezó la Green Revolution",
     "subTitle": "Hace más de 50 años, Nature’s Sunshine nació con una idea clara:",
     "descTitle": "llevar bienestar natural a más personas.",
-    "desc": "Hoy esa misión continúa con una nueva generación.",
+    "desc": "Hoy esa misión continúa con una nueva generación. Y cada persona que forma parte de ella es un ",
     "image": "",
     "imageAlt": "Testimonio de afiliado",
     "videoUrl": "https://youtube.com/shorts/pw1st6LQvT4",
@@ -76,7 +76,7 @@
       "Que inspira hábitos saludables.",
       "Y que crea comunidades alrededor del wellness."
     ],
-    "ctaText": "Y cada persona que forma parte de ella es un Sunshiner"
+    "ctaText": "Sunshiner"
   },
   "chloroFeelBanner": {
     "eyebrow": "Nuestro best seller",
@@ -89,7 +89,27 @@
     "communityLine": "Hoy miles de personas están compartiendo Chloro-feel como parte de su rutina diaria.",
     "opportunityLine": "Y muchas también están descubriendo que compartirlo puede convertirse en una oportunidad.",
     "ctaText": "¡Únete a nuestra causa!",
-    "backgroundImage": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/2599ce94-9fe3-4dc8-abf2-86bdf6dc8455_chloro-feel.png"
+    "imgBestSeller": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/2599ce94-9fe3-4dc8-abf2-86bdf6dc8455_chloro-feel.png",
+    "backgroundImage": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/4b22a155-bc9d-4d96-b0a9-367df1013ebf_GreenRevo.png"
+  },
+  "sponsorship": {
+    "title": "Ser Sunshiner es...",
+    "description": "formar parte de una comunidad que cree en: \"bienestar natural\", \"crecimiento personal\", \"comunidad\", y \"impacto positivo\".\n Pero también significa tener una oportunidad para construir algo propio.",
+    "statements": [
+      "Comprar productos con 45% de descuento",
+      "Generar ganancia por venta directa",
+      "Crear y desarrollar tu propio equipo de Sunshiners",
+      "Construir un negocio presente en 8 países de LATAM",
+      "Viajar por el mundo en Convenciones Internacionales"
+    ],
+    "photos": [
+      "https://powerhealth.pro/stage-emprendeconsunshine/uploads/35ed6bf1-c284-4213-8c90-8636f04594ed_Sunshiner.png",
+      "https://powerhealth.pro/stage-emprendeconsunshine/uploads/4b22a155-bc9d-4d96-b0a9-367df1013ebf_GreenRevo.png",
+      "https://powerhealth.pro/sunshineuniversity/uploads/c302e32c-2361-4ca3-b5ef-dfbe1382e85e_file",
+      "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=384,height=auto,format=webp,quality=75,fit=contain/contentassets/5bc9c75e5d7a4483acf0a989bdf57190/share-02-2.png",
+      "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=1350,height=auto,format=webp,quality=75,fit=contain/contentassets/f678c59e5ad947389f4b00176de9954c/justaddearth_0326_1.webp",
+      "https://uscoreprod.naturessunshine.com/cdn-cgi/image/width=1350,height=auto,format=webp,quality=75,fit=contain/contentassets/e067ff6132f24a12aba8030030822519/st-trail5050.webp"
+    ]
   },
   "catalog": {
     "title": "¿Qué significa ser Sunshiner?",
@@ -252,8 +272,19 @@
     }
   },
   "footer": {
-    "brand": "Natures Afiliates",
+    "brand": "Natures Sunshine MX",
     "tagline": "Bienestar con calma. Crecimiento con propósito.",
+    "privacyText": "Politica de privacidad",
+    "mapTitle": "Ubicacion Nature's Affiliates MX",
+    "mapEmbedUrl": "https://www.openstreetmap.org/export/embed.html?bbox=-99.1850%2C19.3677%2C-99.1650%2C19.3777&layer=mapnik&marker=19.3727%2C-99.1750",
+    "backgroundImage": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/35ed6bf1-c284-4213-8c90-8636f04594ed_Sunshiner.png",
+    "wazeUrl": "https://waze.com/ul?ll=19.372674033893826%2C-99.17504755129977&navigate=yes",
+    "contact": {
+      "phone": "+52 55 1234 5678",
+      "email": "cumplimiento@natr.com",
+      "address": "Patricio Sanz No. 1609, Local 5 Esq. Félix Cuevas Col. Del Valle, C.P. 03100 Tel. 55 5624 0220",
+      "schedule": "Lun–Vie • 9:00–18:00 (GMT-6)"
+    },
     "social": {
       "instagram": "https://www.instagram.com/naturessunshine.mx",
       "facebook": "https://www.facebook.com/naturessunshine.mx",

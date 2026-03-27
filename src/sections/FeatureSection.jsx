@@ -1,4 +1,4 @@
-import { useTypewriter } from "../lib/useTypewriter";
+import { useMultiLineTypewriter } from "../lib/useMultiLineTypewriter";
 import { VideoPopup } from "../ui/VideoPopup";
 import "./FeatureSection.scss";
 
@@ -20,14 +20,18 @@ const getYouTubeThumb = (url) => {
 };
 
 export const FeatureSection = ({ data, onJoinClick }) => {
-  const { displayText, isComplete } = useTypewriter(data.quotes, 80, 40);
+  const { displayedLines, currentLineText, isComplete } =
+    useMultiLineTypewriter(data.quotes, 70, 600, 3000);
   const previewImage = data.image || getYouTubeThumb(data.videoUrl);
 
   return (
     <section className="feature">
-      <h1>{data.title}</h1>
-      <h3>{data.subTitle}</h3>
-      <p>{data.descTitle}</p>
+      <div className="feature__header">
+        <h1 className="feature__title">{data.title}</h1>
+        <h3 className="feature__subtitle">{data.subTitle}</h3>
+        <p className="feature__descTitle">{data.descTitle}</p>
+      </div>
+
       <div className="feature__container">
         {/* Imagen con popup de video */}
         <div className="feature__image-wrapper">
@@ -49,17 +53,25 @@ export const FeatureSection = ({ data, onJoinClick }) => {
           />
         </div>
 
-        {/* Texto con typewriter effect */}
+        {/* Quotes con typewriter effect */}
         <div className="feature__content">
-          <div className="feature__typewriter-wrapper">
-            <p className="feature__typewriter">
-              <span className="feature__quote-text">"{displayText}</span>
-              <span
-                className={`feature__cursor ${isComplete ? "feature__cursor--blink" : ""}`}
-              >
-                |
-              </span>
-            </p>
+          <div className="feature__quotes-wrapper">
+            {displayedLines.map((line, idx) => (
+              <div key={idx} className="feature__quote-line">
+                <span className="feature__quote-icon">✓</span>
+                <p className="feature__quote-text">{line}</p>
+              </div>
+            ))}
+
+            {currentLineText && (
+              <div className="feature__quote-line feature__quote-line--active">
+                <span className="feature__quote-icon">✓</span>
+                <p className="feature__quote-text">
+                  <span>{currentLineText}</span>
+                  <span className="feature__cursor">|</span>
+                </p>
+              </div>
+            )}
           </div>
 
           <button className="feature__cta" onClick={onJoinClick}>

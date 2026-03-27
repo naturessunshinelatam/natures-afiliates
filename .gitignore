@@ -70,3 +70,7 @@ Thumbs.db
 
 # Adjunto folder (local test files)
 src/adjunto/
+
+# Evitar subir assets locales
+/public/images/
+/public/videos/

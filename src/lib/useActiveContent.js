@@ -1,11 +1,11 @@
 import { useSelector } from "react-redux"
 
 export const useActiveContent = () => {
-    const countryCode = useSelector((s) => s.geo?.countryCode || "LATAM");
+    const countryCode = useSelector((s) => s.geo?.countryCode || "MX");
     const byCountry = useSelector((s) => s.content?.byCountry || {});
 
     const entry = byCountry[countryCode];
-    const fallback = byCountry["LATAM"];
+    const fallback = byCountry["MX"];
 
     // debug temporal
     // console.log("countryCode", countryCode, "entry", entry, "fallback", fallback);
