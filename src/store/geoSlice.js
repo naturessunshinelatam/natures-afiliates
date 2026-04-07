@@ -48,6 +48,7 @@ export const fetchGeo = createAsyncThunk("geo/fetch", async (arg, { rejectWithVa
             source: "forced-mx",
             manual: false,
         };
+        console.log("response geo: ", value);
         writeCache(value);
         return value;
     } catch (err) {
