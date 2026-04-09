@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useActiveContent } from "../lib/useActiveContent";
 import "./ChloroFeelBanner.scss";
+import { Card } from "../ui/Card/Card";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,28 +57,13 @@ export const ChloroFeelBanner = ({ onJoinClick }) => {
       />
       <div className="cfb__overlay" aria-hidden="true" />
       <div className="wrap cfb__wrap">
-        <article
-          className="cfb__panel"
-          style={{ backgroundImage: `url(${banner.imgBestSeller})` }}
-        >
-          <p className="cfb__eyebrow cfb__reveal">{banner.eyebrow}</p>
-          <h2 className="cfb__title cfb__reveal">{banner.title}</h2>
-          <p className="cfb__lead cfb__reveal">{banner.lead}</p>
-          <p className="cfb__body cfb__reveal">{banner.body}</p>
-          <p className="cfb__body cfb__reveal">{banner.secondaryBody}</p>
-
-          <ul className="cfb__bullets">
-            <li className="cfb__bullet cfb__reveal">{banner.mission}</li>
-            <li className="cfb__bullet cfb__reveal">{banner.communityLine}</li>
-            <li className="cfb__bullet cfb__reveal">
-              {banner.opportunityLine}
-            </li>
-          </ul>
-
-          <button className="btn cfb__cta cfb__reveal" onClick={onJoinClick}>
-            {banner.ctaText}
-          </button>
-        </article>
+        <div className="cfb__content">
+          <Card
+            body={banner}
+            className="cfb__card cfb__panel cfb__reveal"
+            onJoinClick={onJoinClick}
+          />
+        </div>
       </div>
     </section>
   );
