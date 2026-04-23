@@ -79,11 +79,11 @@ export const NewNavbar = () => {
           onClick={() => goToSection("hero")}
           aria-label="Ir al inicio"
         >
-          <NSPLogo
+          <img
+            src={content?.logo}
+            alt="logo_NSP"
             className="new-nav__brandLogo"
-            color="var(--main_text_light_bg)"
           />
-          <span className="new-nav__brandText">Natures Sunshine</span>
         </button>
 
         <button

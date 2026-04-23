@@ -1,11 +1,12 @@
 {
   "country": "MX",
   "enable": true,
+  "logo": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/25f83f4c-5f62-4225-a14b-43ab36b332b7_LogoNSP.png",
   "hero": {
     "title": "Únete a la Green Revolution",
     "subtitle": "Hoy el wellness es uno de los movimientos de crecimiento más grandes del mundo",
     "image": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/4195a3b7-94c5-4328-8358-25fa13a44a6d_Heroe_Horizontal.jpg",
-    "ctaPrimary": "Conviértete en Sunshiner",
+    "ctaPrimary": "¡Conviértete en Sunshiner!",
     "ctaSecondary": "Whatsapp"
   },
   "supplementsTitle": "Cada vez más personas están buscando:",
