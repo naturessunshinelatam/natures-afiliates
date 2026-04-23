@@ -3,6 +3,8 @@ import { NSPLogo } from "./NSPLogo";
 import { useActiveContent } from "../lib/useActiveContent";
 import "./NewNavBar.scss";
 
+const MOBILE_NAV_MAX_WIDTH = 989;
+
 const links = [
   { id: "hero", label: "Inicio" },
   { id: "about", label: "¿Qué es?" },
@@ -61,6 +63,17 @@ export const NewNavbar = () => {
     return () => observer.disconnect();
   }, [sections]);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth > MOBILE_NAV_MAX_WIDTH) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
   const goToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -92,8 +105,16 @@ export const NewNavbar = () => {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="new-nav-mobile-menu"
+          aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
         >
-          {isOpen ? "Cerrar" : "Menú"}
+          <span
+            className={`new-nav__hamburger ${isOpen ? "is-open" : ""}`}
+            aria-hidden="true"
+          >
+            <span className="new-nav__hamburgerLine" />
+            <span className="new-nav__hamburgerLine" />
+            <span className="new-nav__hamburgerLine" />
+          </span>
         </button>
 
         <div
