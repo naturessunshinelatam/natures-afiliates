@@ -6,7 +6,9 @@
   z-index: 40;
   background: transparent;
   border-bottom: 0;
-  transition: background-color 220ms ease, backdrop-filter 220ms ease,
+  transition:
+    background-color 220ms ease,
+    backdrop-filter 220ms ease,
     border-color 220ms ease;
 
   &--scrolled {
@@ -58,7 +60,7 @@
     display: none;
     color: rgba($main_text_light_bg, 0.95);
     font-weight: 600;
-    text-shadow: 0px 18px 60px rgba(0,0,0, 0.6);
+    text-shadow: 0px 18px 60px rgba(0, 0, 0, 0.6);
     letter-spacing: 0.1px;
   }
 
@@ -69,7 +71,7 @@
     font-family: var(--font-primary);
     border: 0;
     font-size: 1rem;
-    
+
     background: transparent;
     color: rgba($main_text_light_bg, 0.95);
     cursor: pointer;
@@ -121,7 +123,9 @@
     height: 2px;
     border-radius: 999px;
     background: rgba($main_text_light_bg, 0.95);
-    transition: transform 180ms ease, opacity 180ms ease;
+    transition:
+      transform 180ms ease,
+      opacity 180ms ease;
     transform-origin: center;
   }
 
@@ -204,7 +208,9 @@
       font-size: 0.95rem;
       letter-spacing: 0.1px;
       color: rgba($main_text_light_bg, 0.7);
-      transition: background-color 180ms ease, color 180ms ease;
+      transition:
+        background-color 180ms ease,
+        color 180ms ease;
 
       &:hover {
         background: rgba($main_text_light_bg, 0.14);
@@ -227,7 +233,9 @@
       border: 1px solid rgba($main_text_light_bg, 0.35);
       color: $main_text_light_bg;
       white-space: nowrap;
-      transition: background-color 180ms ease, color 180ms ease;
+      transition:
+        background-color 180ms ease,
+        color 180ms ease;
 
       &:hover {
         background: rgba($main_text_light_bg, 0.12);
