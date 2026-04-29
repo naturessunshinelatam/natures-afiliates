@@ -1,5 +1,9 @@
 @use "../styles/variables" as *;
 
+$breakpoint-phone-max: 767px;
+$breakpoint-tablet-min: 768px;
+$breakpoint-tablet-max: #{$breakpoint-tablet - 1px};
+
 .new-nav {
   position: fixed;
   inset: 0 0 auto 0;
@@ -67,7 +71,9 @@
   &__link,
   &__phone,
   &__menuToggle,
-  &__mobileLink {
+  &__mobileLink,
+  &__mobilePhone,
+  &__mobileBrand {
     font-family: var(--font-primary);
     border: 0;
     font-size: 1rem;
@@ -92,8 +98,8 @@
     padding: 0;
     font-weight: 600;
     background: rgba($bg_dark, 0.88);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(6px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28);
   }
 
   &__hamburger {
@@ -148,6 +154,31 @@
     gap: 6px;
   }
 
+  &__mobileBrand {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    border-radius: 10px;
+    border: 1px solid rgba($main_text_light_bg, 0.24);
+    padding: 10px 12px;
+    background: rgba($main_text_light_bg, 0.08);
+  }
+
+  &__mobileBrandLogo {
+    width: 24px;
+    height: 24px;
+    display: block;
+    flex: 0 0 auto;
+  }
+
+  &__mobileBrandText {
+    line-height: 1;
+    font-size: 1rem;
+    color: rgba($main_text_light_bg, 0.95);
+  }
+
   &__mobileLink {
     text-align: left;
     border-radius: 10px;
@@ -162,11 +193,59 @@
     }
   }
 
+  &__mobilePhone {
+    margin-top: 6px;
+    width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid rgba($main_text_light_bg, 0.35);
+    padding: 11px 12px;
+    color: $main_text_light_bg;
+    font-weight: 600;
+  }
+
+  @media (min-width: $breakpoint-tablet-min) and (max-width: $breakpoint-tablet-max) {
+    &__inner {
+      width: min(1220px, calc(100% - 32px));
+      margin: 12px auto;
+      min-height: 78px;
+      border-radius: 18px;
+      padding: 0 20px;
+      gap: 16px;
+      background: rgba($bg_dark, 0.4);
+      backdrop-filter: blur(6px);
+      grid-template-columns: auto 1fr auto;
+    }
+
+    &__brand {
+      display: inline-flex;
+    }
+
+    &__menuToggle {
+      position: static;
+      justify-self: end;
+      width: 46px;
+      height: 46px;
+      box-shadow: none;
+      background: rgba($bg_dark, 0.66);
+    }
+
+    &__mobilePanel {
+      width: min(1220px, calc(100% - 32px));
+      left: 50%;
+      top: 88px;
+      transform: translateX(-50%);
+      border-radius: 16px;
+    }
+  }
+
   @media (min-width: $breakpoint-tablet) {
+    border-bottom: 1px solid transparent;
+
     &--scrolled {
       backdrop-filter: blur(9px);
       background: rgba($bg_dark, 0.3);
-      border-bottom: 1px solid rgba($main_text_light_bg, 0.4);
+      border-bottom-color: rgba($main_text_light_bg, 0.4);
     }
 
     &__inner {
@@ -242,7 +321,15 @@
       }
     }
 
-    &__mobilePanel {
+    &__mobilePanel,
+    &__mobileBrand,
+    &__mobilePhone {
+      display: none;
+    }
+  }
+
+  @media (max-width: $breakpoint-phone-max) {
+    &__mobileBrand {
       display: none;
     }
   }

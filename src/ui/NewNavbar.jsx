@@ -3,7 +3,7 @@ import { NSPLogo } from "./NSPLogo";
 import { useActiveContent } from "../lib/useActiveContent";
 import "./NewNavBar.scss";
 
-const MOBILE_NAV_MAX_WIDTH = 989;
+const DESKTOP_BREAKPOINT = 990;
 
 const links = [
   { id: "hero", label: "Inicio" },
@@ -65,13 +65,24 @@ export const NewNavbar = () => {
 
   useEffect(() => {
     const onResize = () => {
-      if (window.innerWidth > MOBILE_NAV_MAX_WIDTH) {
+      if (window.innerWidth >= DESKTOP_BREAKPOINT && isOpen) {
         setIsOpen(false);
       }
     };
 
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
   }, []);
 
   const goToSection = (id) => {
@@ -145,6 +156,19 @@ export const NewNavbar = () => {
 
       {isOpen && (
         <div id="new-nav-mobile-menu" className="new-nav__mobilePanel">
+          <button
+            type="button"
+            className="new-nav__mobileBrand"
+            onClick={() => goToSection("hero")}
+            aria-label="Ir al inicio"
+          >
+            <NSPLogo
+              className="new-nav__mobileBrandLogo"
+              color="var(--main_text_light_bg)"
+            />
+            <span className="new-nav__mobileBrandText">Natures Sunshine</span>
+          </button>
+
           {links.map((link) => (
             <button
               key={link.id}
@@ -155,6 +179,16 @@ export const NewNavbar = () => {
               {link.label}
             </button>
           ))}
+
+          {!!phone && (
+            <button
+              type="button"
+              className="new-nav__mobilePhone"
+              onClick={() => goToSection("join")}
+            >
+              {phone}
+            </button>
+          )}
         </div>
       )}
     </header>
