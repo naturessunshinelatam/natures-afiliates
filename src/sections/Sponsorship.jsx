@@ -4,6 +4,18 @@ import "./Sponsorship.scss";
 export const Sponsorship = () => {
   const content = useActiveContent();
   const data = content?.sponsorship;
+  const statements = (data?.statements || [])
+    .map((item) => {
+      if (typeof item === "string") {
+        return { text: item, icon: null };
+      }
+
+      return {
+        text: item?.text || "",
+        icon: item?.icon || null,
+      };
+    })
+    .filter((item) => item.text);
 
   if (!data) return null;
 
@@ -16,10 +28,22 @@ export const Sponsorship = () => {
           <p className="sponsorship__description">{data.description}</p>
 
           <ul className="sponsorship__list">
-            {data.statements.map((text, i) => (
+            {statements.map((item, i) => (
               <li key={i} className="sponsorship__item">
-                <span className="sponsorship__check" aria-hidden="true" />
-                <span>{text}</span>
+                <span className="sponsorship__itemIcon" aria-hidden="true">
+                  {item.icon ? (
+                    <img
+                      src={item.icon}
+                      alt=""
+                      className="sponsorship__itemIconImg"
+                      loading="lazy"
+                      decoding="async"
+                    />
+                  ) : (
+                    <span className="sponsorship__check" />
+                  )}
+                </span>
+                <span className="sponsorship__itemText">{item.text}</span>
               </li>
             ))}
           </ul>
