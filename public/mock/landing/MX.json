@@ -95,13 +95,28 @@
   },
   "sponsorship": {
     "title": "Ser Sunshiner es...",
-    "description": "formar parte de una comunidad que cree en: \"bienestar natural\", \"crecimiento personal\", \"comunidad\", y \"impacto positivo\".\n Pero también significa tener una oportunidad para construir algo propio.",
+    "description": "Formar parte de una comunidad que cree en: \"bienestar natural\", \"crecimiento personal\", \"comunidad\", y \"impacto positivo\".\n Pero también significa tener una oportunidad para construir algo propio.",
     "statements": [
-      "Comprar productos con 45% de descuento",
-      "Generar ganancia por venta directa",
-      "Crear y desarrollar tu propio equipo de Sunshiners",
-      "Construir un negocio presente en 8 países de LATAM",
-      "Viajar por el mundo en Convenciones Internacionales"
+      {
+        "icon": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/14b62efb-78b6-4d3b-8285-c9876529ec27_%25.svg",
+        "text": "Comprar productos con 45% de descuento"
+      },
+      {
+        "icon": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/8357813c-741f-45cc-91d9-48c187d5352d_purse.svg",
+        "text": "Generar ganancia por venta directa"
+      },
+      {
+        "icon": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/7d1eb6d4-0d7d-4c31-bfc1-1d9525c9983b_toolsFam.svg",
+        "text": "Crear y desarrollar tu propio equipo de Sunshiners"
+      },
+      {
+        "icon": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/684241e1-b78e-4907-a3cb-61343d54a461_map.svg",
+        "text": "Construir un negocio presente en 8 países de LATAM"
+      },
+      {
+        "icon": "https://powerhealth.pro/stage-emprendeconsunshine/uploads/74af2420-1c81-4df7-9837-8fb5e3eec349_planeTicket.svg",
+        "text": "Viajar por el mundo en Convenciones Internacionales"
+      }
     ],
     "photos": [
       "https://powerhealth.pro/stage-emprendeconsunshine/uploads/4c4c05c6-42a6-4b5d-a10e-f27a8df5de69_Collage2.jpg",
