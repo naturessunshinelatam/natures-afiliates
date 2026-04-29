@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use "../styles/variables" as *;
 
 .sponsorship {
   background-color: $bg_light;
@@ -22,6 +22,12 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @media (max-width: #{$breakpoint-tablet - 1px}) {
+      align-items: center;
+      text-align: center;
+      width: 100%;
+    }
   }
 
   &__title {
@@ -40,6 +46,12 @@
     line-height: 1.65;
     color: rgba($main_text_dark_bg, 0.6);
     max-width: 44ch;
+
+    @media (max-width: #{$breakpoint-tablet - 1px}) {
+      max-width: none;
+      width: 100%;
+      text-align: left;
+    }
   }
 
   // ===== Statement list with checkmarks =====
@@ -50,15 +62,42 @@
     display: flex;
     flex-direction: column;
     gap: 18px;
+
+    @media (max-width: #{$breakpoint-tablet - 1px}) {
+      width: 80%;
+      max-width: 620px;
+      text-align: left;
+    }
   }
 
   &__item {
     display: flex;
     align-items: flex-start;
-    gap: 14px;
+    gap: 30px;
     font-size: clamp(0.9rem, 1.3vw, 1rem);
     line-height: 1.5;
     color: rgba($main_text_dark_bg, 0.85);
+  }
+
+  &__itemIcon {
+    width: 34px;
+    height: 34px;
+    flex: 0 0 34px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2px;
+  }
+
+  &__itemIconImg {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
+  &__itemText {
+    flex: 1;
   }
 
   &__check {
@@ -73,7 +112,7 @@
     margin-top: 1px;
 
     &::after {
-      content: '✓';
+      content: "✓";
       font-size: 0.82rem;
       font-weight: 800;
       color: $main_text_dark_bg;
@@ -114,7 +153,9 @@
     break-inside: avoid;
     box-shadow: 0 10px 26px rgba(20, 34, 14, 0.12);
     transform-origin: center;
-    transition: transform 240ms ease, box-shadow 240ms ease;
+    transition:
+      transform 240ms ease,
+      box-shadow 240ms ease;
 
     &:nth-child(1) {
       aspect-ratio: 3 / 4;
