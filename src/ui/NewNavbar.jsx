@@ -3,6 +3,8 @@ import { NSPLogo } from "./NSPLogo";
 import { useActiveContent } from "../lib/useActiveContent";
 import "./NewNavBar.scss";
 
+const DESKTOP_BREAKPOINT = 990;
+
 const links = [
   { id: "hero", label: "Inicio" },
   { id: "about", label: "¿Qué es?" },
@@ -61,6 +63,28 @@ export const NewNavbar = () => {
     return () => observer.disconnect();
   }, [sections]);
 
+  useEffect(() => {
+    const onResize = () => {
+      if (window.innerWidth >= DESKTOP_BREAKPOINT && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [isOpen]);
+
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
   const goToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -92,8 +116,16 @@ export const NewNavbar = () => {
           onClick={() => setIsOpen((prev) => !prev)}
           aria-expanded={isOpen}
           aria-controls="new-nav-mobile-menu"
+          aria-label={isOpen ? "Cerrar menu" : "Abrir menu"}
         >
-          {isOpen ? "Cerrar" : "Menú"}
+          <span
+            className={`new-nav__hamburger ${isOpen ? "is-open" : ""}`}
+            aria-hidden="true"
+          >
+            <span className="new-nav__hamburgerLine" />
+            <span className="new-nav__hamburgerLine" />
+            <span className="new-nav__hamburgerLine" />
+          </span>
         </button>
 
         <div
@@ -124,6 +156,19 @@ export const NewNavbar = () => {
 
       {isOpen && (
         <div id="new-nav-mobile-menu" className="new-nav__mobilePanel">
+          <button
+            type="button"
+            className="new-nav__mobileBrand"
+            onClick={() => goToSection("hero")}
+            aria-label="Ir al inicio"
+          >
+            <NSPLogo
+              className="new-nav__mobileBrandLogo"
+              color="var(--main_text_light_bg)"
+            />
+            <span className="new-nav__mobileBrandText">Natures Sunshine</span>
+          </button>
+
           {links.map((link) => (
             <button
               key={link.id}
@@ -134,6 +179,16 @@ export const NewNavbar = () => {
               {link.label}
             </button>
           ))}
+
+          {!!phone && (
+            <button
+              type="button"
+              className="new-nav__mobilePhone"
+              onClick={() => goToSection("join")}
+            >
+              {phone}
+            </button>
+          )}
         </div>
       )}
     </header>

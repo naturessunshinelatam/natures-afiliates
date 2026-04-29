@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use "../styles/variables" as *;
 
 .sponsorship {
   background-color: $bg_light;
@@ -73,7 +73,7 @@
     margin-top: 1px;
 
     &::after {
-      content: '✓';
+      content: "✓";
       font-size: 0.82rem;
       font-weight: 800;
       color: $main_text_dark_bg;
@@ -114,7 +114,9 @@
     break-inside: avoid;
     box-shadow: 0 10px 26px rgba(20, 34, 14, 0.12);
     transform-origin: center;
-    transition: transform 240ms ease, box-shadow 240ms ease;
+    transition:
+      transform 240ms ease,
+      box-shadow 240ms ease;
 
     &:nth-child(1) {
       aspect-ratio: 3 / 4;
