@@ -32,7 +32,7 @@
 
   &__title {
     margin: 0;
-    font-family: var(--font-secondary);
+    font-family: var(--font-primary);
     font-size: clamp(1.9rem, 3.8vw, 3rem);
     font-weight: 700;
     line-height: 1.1;
@@ -42,6 +42,7 @@
 
   &__description {
     margin: 0;
+    font-family: var(--font-primary);
     font-size: clamp(0.95rem, 1.4vw, 1.1rem);
     line-height: 1.65;
     color: rgba($main_text_dark_bg, 0.6);
