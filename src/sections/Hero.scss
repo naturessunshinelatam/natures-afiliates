@@ -1,4 +1,4 @@
-﻿@use '../styles/variables' as *;
+﻿@use "../styles/variables" as *;
 
 .hero {
   position: relative;
@@ -87,7 +87,9 @@
       font-size: 1rem;
       font-weight: 800;
       box-shadow: 0 16px 40px rgba(29, 48, 24, 0.16);
-      transition: transform 180ms ease, box-shadow 180ms ease;
+      transition:
+        transform 180ms ease,
+        box-shadow 180ms ease;
 
       &:hover {
         transform: translateY(-2px);
