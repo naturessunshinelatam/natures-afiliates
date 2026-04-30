@@ -9,7 +9,7 @@ const links = [
   { id: "hero", label: "Inicio" },
   { id: "about", label: "¿Qué es?" },
   { id: "feature", label: "Historia" },
-  { id: "chloro-feel", label: "Chloro-feel" },
+  { id: "chloro-feel", label: "Chloro-Feel" },
   { id: "steps", label: "Pasos" },
   { id: "join", label: "Contacto" },
 ];

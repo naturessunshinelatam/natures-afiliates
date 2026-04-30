@@ -25,27 +25,23 @@ export const Join = () => {
         <aside className="join__side">
           <div className="sideCard">
             <h3>Contacto rápido</h3>
-            <p className="muted">{join.contact.email}</p>
-            <p className="muted">WhatsApp: {join.contact.whatsapp}</p>
-            <p className="muted">{join.contact.schedule}</p>
+            {/* <p className="muted">{join.contact.email}</p> */}
+            <p className="muted">Únete a la Green Revolution por WhatsApp.</p>
+            <p className="muted">Nuestros horarios: {join.contact.schedule}</p>
             <WhatsAppButton
               phone={join.contact.whatsapp}
               label="Hablar por WhatsApp"
               className="join__wa"
             />
           </div>
-          <div className="sideCard sideCard--grad join__community">
+          {/* <div className="sideCard sideCard--grad join__community">
             <img
               className="join__community-image"
               src={join.community?.image || "/imgs/join.png"}
               alt={join.community?.imageAlt || "Comunidad Sunshiner"}
               loading="lazy"
             />
-            {/* <h3>{join.community?.title || "Una comunidad que crece"}</h3> */}
-            {/* <p className="muted">
-              {join.community?.lead ||
-                "Hoy miles de personas estan entrando a la Green Revolution."}
-            </p> */}
+
             <p className="muted">{join.community?.intro || "Personas que:"}</p>
             <ul className="join__community-list muted">
               {(
@@ -72,7 +68,7 @@ export const Join = () => {
             <p className="muted">
               {join.community?.ending || "Y asi empezaron a crecer."}
             </p>
-          </div>
+          </div> */}
         </aside>
       </div>
     </div>
