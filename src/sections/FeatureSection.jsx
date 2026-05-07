@@ -1,5 +1,5 @@
 import { useMultiLineTypewriter } from "../lib/useMultiLineTypewriter";
-import { VideoPopup } from "../ui/VideoPopup";
+import { InlineVideoPlayer } from "../ui/InlineVideoPlayer";
 import "./FeatureSection.scss";
 
 const getYouTubeThumb = (url) => {
@@ -33,23 +33,13 @@ export const FeatureSection = ({ data, onJoinClick }) => {
       </div>
 
       <div className="feature__container">
-        {/* Imagen con popup de video */}
+        {/* Video inline en la tarjeta izquierda */}
         <div className="feature__image-wrapper">
-          <VideoPopup
+          <InlineVideoPlayer
             videoUrl={data.videoUrl}
             isShort={data.videoIsShort}
-            triggerElement={
-              <div className="feature__video-trigger">
-                <img
-                  src={previewImage}
-                  alt={data.imageAlt || "Feature image"}
-                  className="feature__image"
-                />
-                <div className="feature__video-overlay" aria-hidden="true">
-                  <div className="feature__play-icon">▶</div>
-                </div>
-              </div>
-            }
+            previewImage={previewImage}
+            imageAlt={data.imageAlt || "Feature image"}
           />
         </div>
 
