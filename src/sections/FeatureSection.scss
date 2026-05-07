@@ -1,4 +1,4 @@
-@use '../styles/variables' as *;
+@use "../styles/variables" as *;
 
 .feature {
   padding: clamp(64px, 9vw, 100px) 0;
@@ -84,6 +84,32 @@
     height: 100%;
   }
 
+  .inline-video-player__trigger {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
+
+  .inline-video-player__iframe,
+  .inline-video-player__video {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+    background: #000;
+  }
+
+  .inline-video-player__video {
+    object-fit: cover;
+  }
+
+  .inline-video-player__iframe--short,
+  .inline-video-player__video--short {
+    width: 100%;
+    height: 100%;
+  }
+
   &__image {
     width: 100%;
     height: 100%;
@@ -119,7 +145,9 @@
     font-size: 24px;
     color: $main_text_light_bg;
     transform: scale(1);
-    transition: transform 0.3s ease, background 0.3s ease;
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
   }
 
   &__content {
