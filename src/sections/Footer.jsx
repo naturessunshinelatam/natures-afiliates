@@ -53,7 +53,15 @@ export const Footer = () => {
               {contact.email ? (
                 <li>
                   <Mail size={18} aria-hidden="true" />
-                  <span>{contact.email}</span>
+
+                  <a
+                    href={`mailto:${contact.email}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="footer__address-link"
+                  >
+                    <span>{contact.email}</span>
+                  </a>
                 </li>
               ) : null}
               {contact.address ? (

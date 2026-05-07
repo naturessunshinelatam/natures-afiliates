@@ -29,7 +29,7 @@ export const ChloroFeelBanner = ({ onJoinClick }) => {
           scrollTrigger: {
             trigger: root.current,
             start: "top 80%",
-            toggleActions: "restart pause none pause",
+            toggleActions: "restart none none restart",
           },
         },
       );
